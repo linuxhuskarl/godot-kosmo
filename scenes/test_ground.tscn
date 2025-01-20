@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://0ojdpu60lwjo"]
+
+[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="1_0irde"]
+[ext_resource type="Texture2D" uid="uid://y86od0y82k7l" path="res://hook.png" id="2_kr0iq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u3by"]
+size = Vector2(43, 24)
+
+[node name="TestGround" type="Node2D"]
+
+[node name="WorldBounds" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="WorldBounds"]
+position = Vector2(256, 640)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/Ground"]
+shape = SubResource("WorldBoundaryShape2D_mdcvm")
+
+[node name="Ceiling" type="StaticBody2D" parent="WorldBounds"]
+position = Vector2(352, 0)
+rotation = -3.14159
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/Ceiling"]
+shape = SubResource("WorldBoundaryShape2D_mdcvm")
+
+[node name="LeftWall" type="StaticBody2D" parent="WorldBounds"]
+position = Vector2(0, 272)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_mdcvm")
+
+[node name="RightWall" type="StaticBody2D" parent="WorldBounds"]
+position = Vector2(1152, 264)
+rotation = -1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/RightWall"]
+shape = SubResource("WorldBoundaryShape2D_mdcvm")
+
+[node name="Ship" parent="." instance=ExtResource("1_0irde")]
+position = Vector2(416, 568)
+
+[node name="Box" type="RigidBody2D" parent="."]
+position = Vector2(264, 624)
+mass = 10.0
+gravity_scale = -2.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Box"]
+position = Vector2(-8, 0)
+rotation = -1.57079
+texture = ExtResource("2_kr0iq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_1u3by")
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
+position = Vector2(264, 624)
+rotation = -1.5708
+node_a = NodePath("../Box")
+node_b = NodePath("../Ship")
+disable_collision = false
+length = 152.0
+initial_offset = 152.0

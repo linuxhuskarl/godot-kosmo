@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpkfjn8piwfa0"]
+
+[ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="1_17f60"]
+[ext_resource type="PackedScene" uid="uid://dis4jpqqomxhp" path="res://ships/booster.tscn" id="1_wktop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4chs"]
+size = Vector2(120, 120)
+
+[node name="TestBooster" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(320, 192)
+mass = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_17f60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_k4chs")
+
+[node name="Booster" parent="RigidBody2D" instance=ExtResource("1_wktop")]
+position = Vector2(0, 64)
+action = &"right"
