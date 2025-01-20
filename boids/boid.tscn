@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwikbo78mibr2"]
+
+[ext_resource type="Script" path="res://boids/boid.gd" id="1_nsgrk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1q5cq"]
+radius = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hj7i"]
+radius = 128.0
+height = 500.0
+
+[node name="Boid" type="CharacterBody2D" groups=["boid"]]
+collision_layer = 256
+collision_mask = 257
+motion_mode = 1
+script = ExtResource("1_nsgrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_1q5cq")
+
+[node name="Vision" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
+position = Vector2(190, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5hj7i")
+
+[node name="RayContainer" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-8, 0)
+color = Color(0.68, 0.728, 1, 1)
+polygon = PackedVector2Array(24, 0, 8, 16, -8, 8, -8, 0, -16, 8, -16, -8, -8, 0, -8, -8, 8, -16)
+
+[connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]
+[connection signal="body_exited" from="Vision" to="." method="_on_vision_body_exited"]
