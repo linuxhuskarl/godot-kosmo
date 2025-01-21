@@ -1,15 +1,60 @@
-[gd_scene load_steps=6 format=3 uid="uid://0ojdpu60lwjo"]
+[gd_scene load_steps=11 format=3 uid="uid://0ojdpu60lwjo"]
 
 [ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="1_0irde"]
-[ext_resource type="Texture2D" uid="uid://y86od0y82k7l" path="res://hook.png" id="2_kr0iq"]
 [ext_resource type="Script" path="res://boids/boid_spawner.gd" id="3_5kw40"]
+[ext_resource type="Shader" path="res://shaders/godray.gdshader" id="4_opigt"]
+[ext_resource type="Shader" path="res://shaders/snow.gdshader" id="5_xp2rf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u3by"]
-size = Vector2(43, 24)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_klmxs"]
+shader = ExtResource("4_opigt")
+shader_parameter/angle = 0.005
+shader_parameter/position = -0.065
+shader_parameter/spread = 0.757
+shader_parameter/cutoff = 0.05
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 0.266
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.251
+shader_parameter/color = Color(0.62, 1, 0.968333, 0.8)
+shader_parameter/hdr = true
+shader_parameter/seed = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x15cd"]
+shader = ExtResource("5_xp2rf")
+shader_parameter/spread = 0.5
+shader_parameter/size = 0.25
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/snow_transparency = 0.2
+shader_parameter/speed = 0.1
+shader_parameter/wind = 2.0
+shader_parameter/num_of_layers = 10
+
+[sub_resource type="Gradient" id="Gradient_nstwu"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2pdx"]
+gradient = SubResource("Gradient_nstwu")
+fill_from = Vector2(0.982906, 0.367521)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6om3"]
+shader = ExtResource("5_xp2rf")
+shader_parameter/spread = 0.5
+shader_parameter/size = 0.1
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/snow_transparency = 0.2
+shader_parameter/speed = 0.05
+shader_parameter/wind = 2.0
+shader_parameter/num_of_layers = 10
 
 [node name="TestGround" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
 
 [node name="WorldBounds" type="Node2D" parent="."]
 
@@ -45,31 +90,7 @@ metadata/_edit_group_ = true
 shape = SubResource("WorldBoundaryShape2D_mdcvm")
 
 [node name="Ship" parent="." instance=ExtResource("1_0irde")]
-position = Vector2(416, 568)
-
-[node name="Hook" type="RigidBody2D" parent="."]
-position = Vector2(264, 624)
-mass = 5.0
-gravity_scale = -2.0
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Hook"]
-position = Vector2(-8, 0)
-rotation = -1.57079
-texture = ExtResource("2_kr0iq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hook"]
-position = Vector2(-10.5, 0)
-shape = SubResource("RectangleShape2D_1u3by")
-
-[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
-position = Vector2(264, 624)
-rotation = -1.5708
-node_a = NodePath("../Hook")
-node_b = NodePath("../Ship")
-disable_collision = false
-length = 152.0
-initial_offset = 152.0
+position = Vector2(488, 624)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.7
@@ -78,3 +99,39 @@ blend_mode = 1
 [node name="BoidSpawner" type="Node2D" parent="."]
 position = Vector2(1000, 128)
 script = ExtResource("3_5kw40")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Godrays" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_klmxs")
+offset_left = -152.0
+offset_right = 1840.0
+offset_bottom = 600.0
+
+[node name="Silt" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_x15cd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_j2pdx")
+flip_h = true
+flip_v = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Silt" type="TextureRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_p6om3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_j2pdx")
+flip_h = true
+flip_v = true

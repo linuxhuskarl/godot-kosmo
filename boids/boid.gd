@@ -41,9 +41,10 @@ func _physics_process(delta: float) -> void:
 
 	for ray in raycasts:
 		if ray.is_colliding():
-			var distance_vector := ray.get_collision_point() - global_position
-			var inverse_distance: float = ray_length - distance_vector.length()
-			acceleration -= separation_weight * inverse_distance * distance_vector.normalized()
+			var collision_point := ray.get_collision_point()
+			var direction := collision_point.direction_to(global_position)
+			var distance := collision_point.distance_to(global_position)
+			acceleration += separation_weight * (ray_length - distance) * direction
 
 	if boid_count > 0:
 		var flock_avg_velocity := Vector2(0, 0)

@@ -4,7 +4,7 @@ class_name Booster extends CollisionShape2D
 @export var action := &"no_input"
 @export var reverse_action := &"no_input"
 
-@onready var emitter: GPUParticles2D = $Particles
+@onready var emitter: CPUParticles2D = $Particles
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

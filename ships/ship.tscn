@@ -26,15 +26,15 @@ shape = SubResource("RectangleShape2D_n8e2t")
 position = Vector2(-72, 0)
 rotation = -1.57079
 force = 4000
-action = &"left"
-reverse_action = &"left_reverse"
+action = &"right"
+reverse_action = &"right_reverse"
 
 [node name="RightBooster" parent="." instance=ExtResource("3_ps1ty")]
 position = Vector2(72, 0)
 rotation = -1.57079
 force = 4000
-action = &"right"
-reverse_action = &"right_reverse"
+action = &"left"
+reverse_action = &"left_reverse"
 
 [node name="omni" type="PointLight2D" parent="."]
 position = Vector2(1.19209e-06, -24)
