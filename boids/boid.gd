@@ -7,6 +7,7 @@ class_name Boid extends CharacterBody2D
 @export var separation_weight := 5.0
 @export var alignment_weight := 2.0
 @export var cohesion_weight := 1.0
+@export_flags_2d_physics var ray_collision_mask : int
 
 var raycasts: Array[RayCast2D] = []
 var visible_boids: Array[Boid] = []
@@ -19,10 +20,10 @@ func _ready() -> void:
 	for i in range(number_of_rays):
 		var ray = RayCast2D.new()
 		ray_container.add_child(ray)
-		ray.collision_mask = 0b0000_0001_0000_0001
+		ray.collision_mask = ray_collision_mask
 		ray.position = Vector2.ZERO
 		ray.target_position = ray_length * Vector2.RIGHT.rotated(
-			deg_to_rad(ray_span_degrees) * (randf() - 0.5)
+			deg_to_rad(ray_span_degrees * (i / (number_of_rays - 1.0) - 0.5)) + randf_range(-0.1, 0.1)
 		)
 		raycasts.append(ray)
 
@@ -39,12 +40,16 @@ func _physics_process(delta: float) -> void:
 
 	var boid_count: int = len(visible_boids)
 
+	# Separation: avoid colliding with nearby boids and other obstacles
 	for ray in raycasts:
 		if ray.is_colliding():
 			var collision_point := ray.get_collision_point()
+			var collision_normal := ray.get_collision_normal()
 			var direction := collision_point.direction_to(global_position)
 			var distance := collision_point.distance_to(global_position)
+			var bounced := direction.bounce(collision_normal) * (ray_length - distance)
 			acceleration += separation_weight * (ray_length - distance) * direction
+
 
 	if boid_count > 0:
 		var flock_avg_velocity := Vector2(0, 0)

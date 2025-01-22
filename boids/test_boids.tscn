@@ -6,107 +6,97 @@
 
 [node name="Boid" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(-496, -32)
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="Boid"]
 zoom = Vector2(0.5, 0.5)
 
 [node name="Boid2" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(-392, 568)
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Boid3" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(-344, 264)
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Boid4" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(-136, -24)
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Boid5" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(16, 248)
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Boid6" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(8, 552)
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Boid7" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(888, 576)
 rotation = -2.95123
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Boid8" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(1344, 600)
 rotation = -2.95123
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Boid9" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(808, 856)
 rotation = -2.95123
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0
 
 [node name="Boid10" parent="." instance=ExtResource("1_abx7v")]
 position = Vector2(1224, 872)
 rotation = -2.95123
-number_of_rays = null
-ray_length = null
-ray_span_degrees = null
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 30
+ray_length = 80.0
+ray_span_degrees = 200.0
+separation_weight = 5.0
+alignment_weight = 2.0
+cohesion_weight = 1.0

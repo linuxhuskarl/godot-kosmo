@@ -10,16 +10,15 @@ height = 500.0
 
 [node name="Boid" type="CharacterBody2D" groups=["boid"]]
 collision_layer = 256
-collision_mask = 256
+collision_mask = 2
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_nsgrk")
-number_of_rays = 20
-ray_length = 120.0
-ray_span_degrees = 120.0
-max_speed = null
-separation_weight = null
-alignment_weight = null
-cohesion_weight = null
+number_of_rays = 9
+ray_span_degrees = 210.0
+max_speed = 150.0
+cohesion_weight = 3.0
+ray_collision_mask = 259
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
