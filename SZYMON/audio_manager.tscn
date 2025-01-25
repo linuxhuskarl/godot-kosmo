@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqi0aigg15apk"]
+[gd_scene load_steps=8 format=3 uid="uid://cve4pfi746dah"]
 
 [ext_resource type="Script" path="res://SZYMON/audio_manager.gd" id="1_5b2fo"]
 [ext_resource type="AudioStream" uid="uid://c26a2y5ohyniu" path="res://SZYMON/[music]Intro.mp3" id="2_x7i6s"]
