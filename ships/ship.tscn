@@ -10,7 +10,7 @@ size = Vector2(120, 72)
 
 [node name="Ship" type="RigidBody2D"]
 mass = 20.0
-linear_damp = 1.0
+linear_damp = 0.5
 script = ExtResource("1_de3ev")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

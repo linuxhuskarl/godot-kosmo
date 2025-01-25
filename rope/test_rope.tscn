@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://d184oahinljem"]
+
+[ext_resource type="PackedScene" uid="uid://qhrc7yjd5084" path="res://rope/rope.tscn" id="1_vcdb4"]
+[ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="2_furvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgfyl"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ev682"]
+radius = 23.15
+
+[node name="TestRope" type="Node2D"]
+
+[node name="Rope" parent="." node_paths=PackedStringArray("body_A", "body_B") instance=ExtResource("1_vcdb4")]
+body_A = NodePath("../Box2")
+body_B = NodePath("../Box")
+
+[node name="RopeStart" parent="Rope" index="0"]
+position = Vector2(316, 261)
+
+[node name="RopeEnd" parent="Rope" index="1"]
+position = Vector2(687, 281)
+
+[node name="Box" type="RigidBody2D" parent="."]
+position = Vector2(687, 281)
+gravity_scale = -2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Box"]
+texture = ExtResource("2_furvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_sgfyl")
+
+[node name="Box2" type="RigidBody2D" parent="."]
+position = Vector2(315, 261)
+
+[node name="Sprite2D" type="Sprite2D" parent="Box2"]
+texture = ExtResource("2_furvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2"]
+shape = SubResource("RectangleShape2D_sgfyl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(472, 342)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_ev682")
+
+[editable path="Rope"]

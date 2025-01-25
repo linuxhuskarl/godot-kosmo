@@ -1,5 +1,40 @@
-[gd_scene format=3 uid="uid://w1mrpu7osbky"]
+[gd_scene load_steps=5 format=3 uid="uid://w1mrpu7osbky"]
+
+[ext_resource type="Script" path="res://rope/rope_segment.gd" id="1_cawxw"]
+
+[sub_resource type="Gradient" id="Gradient_g8jba"]
+offsets = PackedFloat32Array(0.494565, 0.910326, 0.997283)
+colors = PackedColorArray(1, 1, 1, 1, 0.182796, 0.182796, 0.182796, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pb2eq"]
+gradient = SubResource("Gradient_g8jba")
+height = 16
+fill = 1
+fill_from = Vector2(0.487179, 0.504274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n42ua"]
+size = Vector2(40, 10)
 
 [node name="RopeSegment" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 2
+mass = 0.05
+gravity_scale = -2.0
+script = ExtResource("1_cawxw")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-23, 1)
+texture = SubResource("GradientTexture2D_pb2eq")
+texture_offset = Vector2(0, 8)
+polygon = PackedVector2Array(6, -7, 41, -7, 45, -4, 45, 2, 41, 5, 6, 5, 2, 2, 2, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_n42ua")
+
+[node name="SegmentStart" type="Marker2D" parent="."]
+position = Vector2(-18, 0)
+
+[node name="SegmentEnd" type="Marker2D" parent="."]
+position = Vector2(19, 0)

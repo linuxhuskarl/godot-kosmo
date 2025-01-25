@@ -13,6 +13,7 @@ func _physics_process(_delta: float) -> void:
 	if not parent:
 		return
 
+
 	var input := Input.get_axis(reverse_action, action)
 	if input != 0.0:
 		parent.apply_force(
