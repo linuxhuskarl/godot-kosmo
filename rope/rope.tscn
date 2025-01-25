@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://qhrc7yjd5084"]
+
+[node name="Rope" type="Node2D"]
+
+[node name="RopeStart" type="Marker2D" parent="."]
+
+[node name="RopeEnd" type="Marker2D" parent="."]
