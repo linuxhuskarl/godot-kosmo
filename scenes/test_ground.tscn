@@ -108,9 +108,10 @@ blend_mode = 1
 [node name="BoidSpawner" type="Node2D" parent="."]
 position = Vector2(1000, 128)
 script = ExtResource("3_5kw40")
-max_boids = 50
+max_boids = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Godrays" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_klmxs")
@@ -131,6 +132,7 @@ flip_v = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 
 [node name="Silt" type="TextureRect" parent="CanvasLayer2"]
 material = SubResource("ShaderMaterial_p6om3")
