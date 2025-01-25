@@ -1,0 +1,247 @@
+[gd_scene load_steps=21 format=3 uid="uid://dw4d26csn16ul"]
+
+[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="1_j53xm"]
+[ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://linras/parallax/third-plan.png" id="2_fg24r"]
+[ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://linras/parallax/second-plan.png" id="3_45cte"]
+[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="4_8remt"]
+[ext_resource type="Script" path="res://boids/boid_spawner.gd" id="5_8obp5"]
+[ext_resource type="Shader" path="res://shaders/godray.gdshader" id="6_nynas"]
+[ext_resource type="Shader" path="res://shaders/snow.gdshader" id="7_kigxi"]
+[ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_dt3ei"]
+[ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="9_vualj"]
+[ext_resource type="PackedScene" uid="uid://dxtuh1riy1tyw" path="res://SZYMON/WaterEffectTest.tscn" id="10_47phs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_klmxs"]
+shader = ExtResource("6_nynas")
+shader_parameter/angle = 0.005
+shader_parameter/position = -0.065
+shader_parameter/spread = 0.757
+shader_parameter/cutoff = 0.05
+shader_parameter/falloff = 1.0
+shader_parameter/edge_fade = 0.266
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.251
+shader_parameter/color = Color(0.62, 1, 0.968333, 0.8)
+shader_parameter/hdr = true
+shader_parameter/seed = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x15cd"]
+shader = ExtResource("7_kigxi")
+shader_parameter/spread = 0.5
+shader_parameter/size = 0.25
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/snow_transparency = 0.2
+shader_parameter/speed = 0.1
+shader_parameter/wind = 2.0
+shader_parameter/num_of_layers = 10
+
+[sub_resource type="Gradient" id="Gradient_nstwu"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2pdx"]
+gradient = SubResource("Gradient_nstwu")
+fill_from = Vector2(0.982906, 0.367521)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6om3"]
+shader = ExtResource("7_kigxi")
+shader_parameter/spread = 0.5
+shader_parameter/size = 0.1
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/snow_transparency = 0.2
+shader_parameter/speed = 0.05
+shader_parameter/wind = 2.0
+shader_parameter/num_of_layers = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0r8h"]
+size = Vector2(455.75, 629)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56qah"]
+size = Vector2(521, 384.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp6ef"]
+size = Vector2(521, 384.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mkfw"]
+size = Vector2(557, 246.125)
+
+[node name="TestGround" type="Node2D"]
+
+[node name="WorldBounds" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="WorldBounds"]
+position = Vector2(1000, 3072)
+collision_layer = 2
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/Ground"]
+shape = SubResource("WorldBoundaryShape2D_mdcvm")
+
+[node name="Ceiling" type="StaticBody2D" parent="WorldBounds"]
+position = Vector2(1000, 0)
+rotation = -3.14159
+collision_layer = 2
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/Ceiling"]
+shape = SubResource("WorldBoundaryShape2D_mdcvm")
+
+[node name="LeftWall" type="StaticBody2D" parent="WorldBounds"]
+position = Vector2(0, 330)
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_mdcvm")
+
+[node name="RightWall" type="StaticBody2D" parent="WorldBounds"]
+position = Vector2(6144, 330)
+rotation = -1.5708
+collision_layer = 2
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/RightWall"]
+shape = SubResource("WorldBoundaryShape2D_mdcvm")
+
+[node name="ParallaxBackground" type="Node2D" parent="."]
+
+[node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground"]
+z_index = -100
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3072, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_j53xm")
+centered = false
+
+[node name="ParallaxLayer2" type="Parallax2D" parent="ParallaxBackground"]
+z_index = -99
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3072, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("2_fg24r")
+centered = false
+
+[node name="ParallaxLayer3" type="Parallax2D" parent="ParallaxBackground"]
+z_index = -98
+repeat_size = Vector2(3072, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("3_45cte")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(441, 2728)
+limit_left = 0
+limit_top = 0
+limit_right = 6144
+limit_bottom = 3072
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="Ship" parent="." instance=ExtResource("4_8remt")]
+position = Vector2(441, 2728)
+collision_mask = 3
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Ship"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.7
+blend_mode = 1
+
+[node name="BoidSpawner" type="Node2D" parent="."]
+position = Vector2(1000, 128)
+script = ExtResource("5_8obp5")
+max_boids = 10
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Godrays" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_klmxs")
+offset_left = -152.0
+offset_right = 1840.0
+offset_bottom = 600.0
+
+[node name="Silt" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_x15cd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_j2pdx")
+flip_h = true
+flip_v = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+visible = false
+
+[node name="Silt" type="TextureRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_p6om3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_j2pdx")
+flip_h = true
+flip_v = true
+
+[node name="Terrain" parent="." instance=ExtResource("8_dt3ei")]
+
+[node name="MusicChanger" parent="." instance=ExtResource("9_vualj")]
+position = Vector2(903, 2653)
+target_track = "Intro"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger"]
+position = Vector2(-3.875, 45.5)
+shape = SubResource("RectangleShape2D_p0r8h")
+debug_color = Color(0.657412, 0.509128, 0.238719, 0.42)
+
+[node name="MusicChanger2" parent="." instance=ExtResource("9_vualj")]
+position = Vector2(1811, 1024)
+target_track = "Exploration"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger2"]
+position = Vector2(-272.25, 360.25)
+shape = SubResource("RectangleShape2D_56qah")
+
+[node name="MusicChanger3" parent="." instance=ExtResource("9_vualj")]
+position = Vector2(3198, 1697)
+target_track = "Encounter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger3"]
+position = Vector2(17.5, -1.875)
+shape = SubResource("RectangleShape2D_gp6ef")
+debug_color = Color(0.948284, 0.156601, 0.423379, 0.42)
+
+[node name="MusicChanger4" parent="." instance=ExtResource("9_vualj")]
+position = Vector2(3198, 1697)
+target_track = "EncounterEnd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger4"]
+position = Vector2(931, 845)
+shape = SubResource("RectangleShape2D_4mkfw")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="WaterEffectTest" parent="." instance=ExtResource("10_47phs")]
+visible = false
+position = Vector2(-526, 3013)
