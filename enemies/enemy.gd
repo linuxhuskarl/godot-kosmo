@@ -6,6 +6,7 @@ enum EnemyState {NONE, IDLE, CHASE, FLEE}
 @export var target: Node2D
 @export var max_speed: float = 100
 @export var fleeing_time: float = 1.0
+@export var min_distance: float = 70.0
 
 var _next_state: EnemyState = EnemyState.NONE
 var _was_in_light: bool = false
@@ -75,7 +76,10 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func move_to(delta, gl_pos: Vector2):
-	velocity = velocity.move_toward(global_position.direction_to(gl_pos) * max_speed, 2 * max_speed * delta)
+	if gl_pos.distance_to(global_position) > min_distance:
+		velocity = velocity.move_toward(global_position.direction_to(gl_pos) * max_speed, 2 * max_speed * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, 2 * max_speed * delta)
 	velocity = velocity.normalized() * min(max_speed, velocity.length())
 
 func move_away(delta, gl_pos: Vector2):

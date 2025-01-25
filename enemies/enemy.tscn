@@ -1,7 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://iweybw48jc01"]
+[gd_scene load_steps=9 format=3 uid="uid://iweybw48jc01"]
 
 [ext_resource type="Texture2D" uid="uid://y86od0y82k7l" path="res://hook.png" id="1_haej3"]
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_sfe8d"]
+
+[sub_resource type="Shader" id="Shader_awuep"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix,light_only;
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q2b14"]
+shader = SubResource("Shader_awuep")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hpaxc"]
 radius = 12.0
@@ -9,12 +19,25 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ol0y4"]
 radius = 400.0
 
+[sub_resource type="Gradient" id="Gradient_52vld"]
+offsets = PackedFloat32Array(0, 0.0914454, 0.117994)
+colors = PackedColorArray(0.99, 0, 0.0164997, 1, 0.388929, 0, 0.00648204, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e5wyd"]
+gradient = SubResource("Gradient_52vld")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_sfe8d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 6
+visibility_layer = 6
+material = SubResource("ShaderMaterial_q2b14")
 position = Vector2(1, 13)
 texture = ExtResource("1_haej3")
 
@@ -27,3 +50,6 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleDetector"]
 shape = SubResource("CircleShape2D_ol0y4")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_e5wyd")
