@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjlovundhsjr1"]
+[gd_scene load_steps=9 format=3 uid="uid://cjlovundhsjr1"]
 
 [ext_resource type="Script" path="res://ships/ship.gd" id="1_de3ev"]
 [ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="1_n2kfc"]
 [ext_resource type="PackedScene" uid="uid://dis4jpqqomxhp" path="res://ships/booster.tscn" id="3_ps1ty"]
+[ext_resource type="Texture2D" uid="uid://ca5klwxud668f" path="res://ligth.png" id="5_2r6wm"]
 [ext_resource type="Texture2D" uid="uid://bfndkr5qsecn" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="5_vdwwe"]
+[ext_resource type="Script" path="res://ships/point_light_2d.gd" id="6_hi0fg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p0x7k"]
+light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8e2t"]
 size = Vector2(80, 66)
@@ -14,6 +19,7 @@ linear_damp = 1.0
 script = ExtResource("1_de3ev")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_p0x7k")
 position = Vector2(0, -4)
 scale = Vector2(0.6875, 0.59375)
 texture = ExtResource("1_n2kfc")
@@ -26,18 +32,25 @@ shape = SubResource("RectangleShape2D_n8e2t")
 position = Vector2(-50, 0)
 rotation = -1.57079
 force = 4000
-action = &"right"
-reverse_action = &"right_reverse"
+action = &"left"
+reverse_action = &"left_reverse"
 
 [node name="RightBooster" parent="." instance=ExtResource("3_ps1ty")]
 position = Vector2(50, 0)
 rotation = -1.57079
 force = 4000
-action = &"left"
-reverse_action = &"left_reverse"
+action = &"right"
+reverse_action = &"right_reverse"
 
 [node name="omni" type="PointLight2D" parent="."]
-position = Vector2(122, 59)
 rotation = 0.785397
-scale = Vector2(5, 5)
+scale = Vector2(2, 2)
+energy = 0.5
 texture = ExtResource("5_vdwwe")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1, -2.00002)
+rotation = 0.785397
+scale = Vector2(3.33525, 3.30014)
+texture = ExtResource("5_2r6wm")
+script = ExtResource("6_hi0fg")

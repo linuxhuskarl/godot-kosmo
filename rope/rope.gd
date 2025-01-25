@@ -1,7 +1,10 @@
-extends Node2D
+class_name Rope extends Node2D
 
-@export var body_A: PhysicsBody2D = null
-@export var body_B: PhysicsBody2D = null
+@export var body_A: PhysicsBody2D
+@export var body_B: PhysicsBody2D
+@export var anchor_A: Node2D
+@export var anchor_B: Node2D
+
 @export_range(0.0, 0.9) var joint_bias : float = 0 :
 	set(value):
 		joint_bias = value
@@ -10,10 +13,6 @@ extends Node2D
 
 var segments_created: Array[RopeSegment] = []
 var joints_created: Array[PinJoint2D] = []
-
-
-@onready var rope_start: Marker2D = $RopeStart
-@onready var rope_end: Marker2D = $RopeEnd
 
 const ROPE_SEGMENT = preload("res://rope/rope_segment.tscn")
 
@@ -35,26 +34,32 @@ func create_pin_joint(body_A: PhysicsBody2D, body_B: PhysicsBody2D, pin_position
 	joint.node_b = body_B.get_path()
 	joint.bias = joint_bias
 
+func add_segment(rope_segment: RopeSegment) -> void:
+	add_child(rope_segment)
+	segments_created.append(rope_segment)
+
 func generate_rope_segments() -> void:
-	var rope_length: float = rope_start.global_position.distance_to(rope_end.global_position)
-	var direction_angle: float = rope_start.global_position.angle_to_point(rope_end.global_position)
-	var temp_segment: RopeSegment = ROPE_SEGMENT.instantiate()
-	add_child(temp_segment)
-	var segment_length : float = temp_segment.length()
-	temp_segment.queue_free()
+	var rope_length: float = anchor_A.global_position.distance_to(anchor_B.global_position)
+	var direction_angle: float = anchor_A.global_position.angle_to_point(anchor_B.global_position)
+	
+	var segment: RopeSegment = ROPE_SEGMENT.instantiate()
+	add_segment(segment)
+	segment.global_position = anchor_A.global_position - segment.segment_start.position
+	segment.rotation = direction_angle
+	
+	var segment_length : float = segment.length()
 	var segment_count : int = ceili(rope_length / segment_length)
 	var real_segment_length : float = rope_length / segment_count
-	for i in range(segment_count):
-		var segment_start = lerp(rope_start.global_position, rope_end.global_position, float(i)/segment_count)
-		var segment: RopeSegment = ROPE_SEGMENT.instantiate()
-		add_child(segment)
-		segments_created.append(segment)
+	for i in range(1, segment_count):
+		var segment_start = lerp(anchor_A.global_position, anchor_B.global_position, float(i)/segment_count)
+		segment = ROPE_SEGMENT.instantiate()
+		add_segment(segment)
 		segment.global_position = segment_start - segment.segment_start.position
 		segment.rotation = direction_angle
 	
-	create_pin_joint(body_A, segments_created[0], rope_start.global_position)
+	create_pin_joint(body_A, segments_created[0], anchor_A.global_position)
 	for i in range(1, segment_count):
 		create_pin_joint(segments_created[i-1], segments_created[i], segments_created[i].segment_start.global_position)
-	create_pin_joint(segments_created[-1], body_B, rope_end.global_position)
+	create_pin_joint(segments_created[-1], body_B, anchor_B.global_position)
 	
 	

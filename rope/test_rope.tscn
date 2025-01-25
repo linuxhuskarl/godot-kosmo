@@ -1,44 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://d184oahinljem"]
+[gd_scene load_steps=6 format=3 uid="uid://d184oahinljem"]
 
-[ext_resource type="PackedScene" uid="uid://qhrc7yjd5084" path="res://rope/rope.tscn" id="1_vcdb4"]
-[ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="2_furvs"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgfyl"]
-size = Vector2(128, 128)
+[ext_resource type="Texture2D" uid="uid://br3huk14xqmkd" path="res://linras/bubbles/bubble.png" id="1_esbqk"]
+[ext_resource type="Script" path="res://rope/rope.gd" id="2_3el8t"]
+[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="3_esyst"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ev682"]
 radius = 23.15
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hng8x"]
+radius = 40.0
+
 [node name="TestRope" type="Node2D"]
-
-[node name="Rope" parent="." node_paths=PackedStringArray("body_A", "body_B") instance=ExtResource("1_vcdb4")]
-body_A = NodePath("../Box2")
-body_B = NodePath("../Box")
-
-[node name="RopeStart" parent="Rope" index="0"]
-position = Vector2(316, 261)
-
-[node name="RopeEnd" parent="Rope" index="1"]
-position = Vector2(687, 281)
-
-[node name="Box" type="RigidBody2D" parent="."]
-position = Vector2(687, 281)
-gravity_scale = -2.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Box"]
-texture = ExtResource("2_furvs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
-shape = SubResource("RectangleShape2D_sgfyl")
-
-[node name="Box2" type="RigidBody2D" parent="."]
-position = Vector2(315, 261)
-
-[node name="Sprite2D" type="Sprite2D" parent="Box2"]
-texture = ExtResource("2_furvs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2"]
-shape = SubResource("RectangleShape2D_sgfyl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(472, 342)
@@ -48,4 +20,30 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_ev682")
 
-[editable path="Rope"]
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color(1, 1, 1, 0.670588)
+polygon = PackedVector2Array(-4, -23, -19, -15, -23, -4, -21, 7, -13, 18, 0, 23, 11, 20, 19, 12, 23, 1, 20, -11, 13, -20)
+
+[node name="Ship" parent="." instance=ExtResource("3_esyst")]
+position = Vector2(357, 420)
+
+[node name="Rope" type="Node2D" parent="Ship" node_paths=PackedStringArray("body_A", "body_B", "anchor_A", "anchor_B")]
+position = Vector2(-688, -260)
+script = ExtResource("2_3el8t")
+body_A = NodePath("..")
+body_B = NodePath("../Bubble")
+anchor_A = NodePath("..")
+anchor_B = NodePath("../Bubble")
+
+[node name="Bubble" type="RigidBody2D" parent="Ship"]
+position = Vector2(164, 8)
+gravity_scale = 10.0
+linear_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship/Bubble"]
+shape = SubResource("CircleShape2D_hng8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ship/Bubble"]
+modulate = Color(1, 1, 1, 0.784314)
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("1_esbqk")
