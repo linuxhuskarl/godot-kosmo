@@ -11,11 +11,10 @@ position = Vector2(290, 204)
 texture = ExtResource("1_33we5")
 
 [node name="Enemy" parent="." instance=ExtResource("1_h7bav")]
-position = Vector2(67, 80)
+position = Vector2(701, 294)
 
 [node name="Ship" parent="." instance=ExtResource("2_marxf")]
 position = Vector2(364, 249)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-energy = 0.9
-blend_mode = 1
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.176419, 0.176419, 0.176419, 1)

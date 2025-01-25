@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjlovundhsjr1"]
+[gd_scene load_steps=12 format=3 uid="uid://cjlovundhsjr1"]
 
 [ext_resource type="Script" path="res://ships/ship.gd" id="1_de3ev"]
-[ext_resource type="Texture2D" uid="uid://um732tiv1ygr" path="res://linras/ship/ship.png" id="2_q3ml3"]
+[ext_resource type="Texture2D" uid="uid://cu3fwtomof8sh" path="res://linras/ship/ship.png" id="2_q3ml3"]
 [ext_resource type="PackedScene" uid="uid://dis4jpqqomxhp" path="res://ships/booster.tscn" id="3_ps1ty"]
 [ext_resource type="Texture2D" uid="uid://dg7uyvw40s7ir" path="res://maciej/cone_light.png" id="5_4msjt"]
 [ext_resource type="Texture2D" uid="uid://bfndkr5qsecn" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="5_vdwwe"]
@@ -14,6 +14,10 @@ light_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vxxw"]
 radius = 37.3363
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u2kok"]
+cull_mode = 1
+polygon = PackedVector2Array(-19, -36, -15, 10, 14, 10, 19, -36, 5, 1, 0, 3, -5, 1)
 
 [node name="Ship" type="RigidBody2D"]
 mass = 20.0
@@ -45,11 +49,20 @@ force = 4000
 action = &"right"
 reverse_action = &"right_reverse"
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Reflector" type="PointLight2D" parent="."]
 rotation = -1.5708
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_item_cull_mask = 3
 texture = ExtResource("5_4msjt")
 offset = Vector2(496.67, 0)
 script = ExtResource("6_hi0fg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Reflector"]
+rotation = 1.5708
+scale = Vector2(1.03499, 0.98765)
+occluder = SubResource("OccluderPolygon2D_u2kok")
+occluder_light_mask = 2
 
 [node name="omni" type="PointLight2D" parent="."]
 rotation = 0.785397
@@ -104,7 +117,7 @@ target_position = Vector2(0, -900)
 collision_mask = 4
 
 [node name="Bubble" parent="." instance=ExtResource("7_d26ro")]
-position = Vector2(145, -11)
+position = Vector2(143, -13)
 
 [node name="Rope" type="Node2D" parent="." node_paths=PackedStringArray("body_A", "body_B", "anchor_A", "anchor_B")]
 script = ExtResource("8_m3avw")

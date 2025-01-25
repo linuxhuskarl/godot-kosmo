@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvoicmvfqip0w"]
+[gd_scene load_steps=6 format=3 uid="uid://dvoicmvfqip0w"]
 
 [ext_resource type="Texture2D" uid="uid://br3huk14xqmkd" path="res://linras/bubbles/bubble.png" id="1_lhtjh"]
 [ext_resource type="Script" path="res://ships/bubble.gd" id="1_lr2wb"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hng8x"]
 radius = 40.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0apsu"]
+polygon = PackedVector2Array(-16.4115, -64.4256, 0, -66.5025, 18, -64, 20.1688, -73.5888, -19.3277, -73.8142)
 
 [node name="Bubble" type="RigidBody2D"]
 collision_layer = 9
@@ -23,4 +26,69 @@ scale = Vector2(0.135, 0.135)
 texture = ExtResource("1_lhtjh")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+range_item_cull_mask = 7
+shadow_enabled = true
+shadow_item_cull_mask = 7
 texture = ExtResource("3_f1jy6")
+
+[node name="Occluders" type="Node2D" parent="."]
+scale = Vector2(1.83452, 1.83452)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Occluders"]
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Occluders"]
+rotation = 0.523599
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Occluders"]
+rotation = 1.0472
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Occluders"]
+rotation = 1.5708
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Occluders"]
+rotation = 2.0944
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Occluders"]
+rotation = 2.61799
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="Occluders"]
+rotation = 3.14159
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="Occluders"]
+rotation = 3.66519
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D9" type="LightOccluder2D" parent="Occluders"]
+rotation = 4.18879
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D10" type="LightOccluder2D" parent="Occluders"]
+rotation = 4.71239
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D11" type="LightOccluder2D" parent="Occluders"]
+rotation = 5.23599
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
+
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="Occluders"]
+rotation = 5.75959
+occluder = SubResource("OccluderPolygon2D_0apsu")
+occluder_light_mask = 4
