@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://0ojdpu60lwjo"]
+[gd_scene load_steps=17 format=3 uid="uid://0ojdpu60lwjo"]
 
 [ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="1_0irde"]
 [ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://linras/parallax/third-plan.png" id="2_m02pk"]
@@ -8,6 +8,7 @@
 [ext_resource type="Shader" path="res://shaders/snow.gdshader" id="5_xp2rf"]
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="11_y4cxx"]
+[ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="18_7qsqd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]
 
@@ -54,6 +55,9 @@ shader_parameter/snow_transparency = 0.2
 shader_parameter/speed = 0.05
 shader_parameter/wind = 2.0
 shader_parameter/num_of_layers = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0r8h"]
+size = Vector2(453.5, 584)
 
 [node name="TestGround" type="Node2D"]
 
@@ -192,3 +196,20 @@ flip_h = true
 flip_v = true
 
 [node name="Terrain" parent="." instance=ExtResource("8_vkj6k")]
+
+[node name="MusicChanger" parent="." instance=ExtResource("18_7qsqd")]
+position = Vector2(903, 2653)
+target_track = "Intro"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger"]
+position = Vector2(-5, 47)
+shape = SubResource("RectangleShape2D_p0r8h")
+debug_color = Color(0.657412, 0.509128, 0.238719, 0.42)
+
+[node name="MusicChanger2" parent="." instance=ExtResource("18_7qsqd")]
+position = Vector2(1223, 1451)
+target_track = "Exploration"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger2"]
+position = Vector2(12, 18)
+shape = SubResource("RectangleShape2D_p0r8h")
