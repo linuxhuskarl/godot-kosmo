@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ke3ogiylbg2b"]
+
+[ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="1_j7sl3"]
+[ext_resource type="Shader" path="res://water_shader.gdshader" id="2_gtikc"]
+[ext_resource type="Texture2D" path="res://SZYMON/water.tres" id="7_eb5qq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6xfx"]
+shader = ExtResource("2_gtikc")
+shader_parameter/color = Color(0.827769, 0.837321, 0.166902, 1)
+shader_parameter/speed = Vector2(0.025, 0.04)
+shader_parameter/wave_strength = 0.2
+shader_parameter/fast_noise = ExtResource("7_eb5qq")
+
+[node name="WaterEffect" type="Node2D"]
+
+[node name="Icon2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n6xfx")
+position = Vector2(1888, 730)
+scale = Vector2(86.7344, 27.6055)
+texture = ExtResource("1_j7sl3")

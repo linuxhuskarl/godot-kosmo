@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://q2iyoi0e41xd"]
+
+[ext_resource type="Script" path="res://SZYMON/music_changer_area.gd" id="1_ll0eb"]
+
+[node name="MusicChanger" type="Area2D"]
+script = ExtResource("1_ll0eb")
