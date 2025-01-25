@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=11 format=3 uid="uid://cy1lshkmclqfm"]
+
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_nuokl"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_ffrjl"]
+[ext_resource type="Texture2D" uid="uid://3x6xmu3et3ei" path="res://linras/terrain patterns/terrain-patterns_0002_short_edge.png" id="3_c21kg"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="4_ijevn"]
+[ext_resource type="Texture2D" uid="uid://cijqa0inyq4af" path="res://linras/terrain patterns/terrain-patterns_0001_fill.png" id="5_cndli"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="6_sxd5y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aebd8"]
+
+[sub_resource type="Resource" id="Resource_ip34s"]
+script = ExtResource("2_ffrjl")
+textures = Array[Texture2D]([ExtResource("3_c21kg")])
+textures_corner_outer = Array[Texture2D]([])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([])
+textures_taper_right = Array[Texture2D]([])
+textures_taper_corner_left = Array[Texture2D]([])
+textures_taper_corner_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = false
+use_taper_texture = false
+fit_mode = 0
+material = SubResource("CanvasItemMaterial_aebd8")
+
+[sub_resource type="Resource" id="Resource_85obb"]
+script = ExtResource("4_ijevn")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_svfnh"]
+script = ExtResource("1_nuokl")
+edge_material = SubResource("Resource_ip34s")
+normal_range = SubResource("Resource_85obb")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[resource]
+script = ExtResource("6_sxd5y")
+_edge_meta_materials = Array[ExtResource("1_nuokl")]([SubResource("Resource_svfnh")])
+fill_textures = Array[Texture2D]([ExtResource("5_cndli")])
+fill_texture_z_index = -10
+fill_texture_show_behind_parent = false
+fill_texture_scale = 1.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0
