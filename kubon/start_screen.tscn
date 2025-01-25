@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://csag1g3m3uaap"]
+
+[ext_resource type="Script" path="res://kubon/start_screen.gd" id="1_tfdvq"]
+[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="2_papf0"]
+[ext_resource type="Texture2D" uid="uid://cu3fwtomof8sh" path="res://linras/ship/ship.png" id="3_jxtkw"]
+[ext_resource type="FontFile" uid="uid://b7f31kpu6udej" path="res://kubon/Silure-yr0Z.ttf" id="4_f3sum"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j8i2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ghspo"]
+
+[node name="Start_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfdvq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.633757, 0.633757, 0.633757, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_papf0")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_jxtkw")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_f3sum")
+theme_override_font_sizes/font_size = 80
+text = "BUBBLE TROUBLE"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 400
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(10, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j8i2c")
+text = "PLAY"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 400
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ghspo")
+text = "EXIT"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer3/Exit" to="." method="_on_exit_pressed"]
