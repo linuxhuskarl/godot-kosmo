@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://bxe0sb26pnbs8"
+uid="uid://bwu2h3x0whtyd"
 path="res://.godot/imported/[SFX]EngineOn.mp3-a534adfb557d65ec9250e6903639b566.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/[SFX]EngineOn.mp3-a534adfb557d65ec9250e690363
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0.0
 bpm=0.0
 beat_count=0
