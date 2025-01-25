@@ -1,29 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://dis4jpqqomxhp"]
+[gd_scene load_steps=8 format=3 uid="uid://dis4jpqqomxhp"]
 
 [ext_resource type="Script" path="res://ships/booster.gd" id="1_05pvo"]
-[ext_resource type="Texture2D" uid="uid://bwdu7ssj4g4mh" path="res://bubble.png" id="2_xh5gt"]
+[ext_resource type="Texture2D" uid="uid://dhtrfjlh6fkg6" path="res://linras/bubbles/bubble trasparent.png" id="2_m0e8e"]
 [ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="3_wmi1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5fyg"]
-size = Vector2(20, 18)
+size = Vector2(9.99996, 14)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uesxt"]
+light_mode = 1
 
 [sub_resource type="Curve" id="Curve_c5nsb"]
-_data = [Vector2(0, 0.813187), 0.0, 0.0, 0, 0, Vector2(0.429907, 1), 0.0, 0.0, 0, 0, Vector2(0.588785, 0.010989), -3.57988, 0.0, 0, 0]
+_data = [Vector2(0, 0.0754012), 0.0, 0.0, 0, 0, Vector2(0.435262, 0.14492), 0.0, 0.0, 0, 0, Vector2(0.588785, 0.010989), -3.57988, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_3ejog"]
 offsets = PackedFloat32Array(0, 0.486667, 1)
-colors = PackedColorArray(0.67, 1, 0.9835, 1, 0, 0.537255, 0.52549, 0.533333, 0.346186, 0.547705, 1, 0)
+colors = PackedColorArray(1, 1, 1, 0.647059, 1, 1, 1, 0.533333, 1, 1, 1, 0)
 
 [node name="Booster" type="CollisionShape2D"]
 shape = SubResource("RectangleShape2D_l5fyg")
 script = ExtResource("1_05pvo")
 
 [node name="Particles" type="CPUParticles2D" parent="."]
-position = Vector2(-8, 0)
-amount = 50
+material = SubResource("CanvasItemMaterial_uesxt")
+amount = 25
 explosiveness = 0.08
-texture = ExtResource("2_xh5gt")
+texture = ExtResource("2_m0e8e")
 emission_shape = 3
 emission_rect_extents = Vector2(5, 1)
 direction = Vector2(-1, 0)
@@ -33,12 +36,13 @@ initial_velocity_min = 190.0
 initial_velocity_max = 298.0
 damping_min = 100.0
 damping_max = 100.0
-scale_amount_min = 0.1
-scale_amount_max = 0.5
+scale_amount_min = 0.2
+scale_amount_max = 0.4
 scale_amount_curve = SubResource("Curve_c5nsb")
 color_ramp = SubResource("Gradient_3ejog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 rotation = 1.5708
 scale = Vector2(0.1, 0.2)
 texture = ExtResource("3_wmi1w")

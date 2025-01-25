@@ -1,17 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjlovundhsjr1"]
+[gd_scene load_steps=11 format=3 uid="uid://cjlovundhsjr1"]
 
 [ext_resource type="Script" path="res://ships/ship.gd" id="1_de3ev"]
-[ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="1_n2kfc"]
+[ext_resource type="Texture2D" uid="uid://um732tiv1ygr" path="res://linras/ship/ship.png" id="2_q3ml3"]
 [ext_resource type="PackedScene" uid="uid://dis4jpqqomxhp" path="res://ships/booster.tscn" id="3_ps1ty"]
-[ext_resource type="Texture2D" uid="uid://ca5klwxud668f" path="res://ligth.png" id="5_2r6wm"]
+[ext_resource type="Texture2D" uid="uid://dg7uyvw40s7ir" path="res://maciej/cone_light.png" id="5_4msjt"]
 [ext_resource type="Texture2D" uid="uid://bfndkr5qsecn" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="5_vdwwe"]
 [ext_resource type="Script" path="res://ships/point_light_2d.gd" id="6_hi0fg"]
+[ext_resource type="PackedScene" uid="uid://dvoicmvfqip0w" path="res://ships/bubble.tscn" id="7_d26ro"]
+[ext_resource type="Script" path="res://rope/rope.gd" id="8_m3avw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p0x7k"]
 light_mode = 1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8e2t"]
-size = Vector2(80, 66)
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vxxw"]
+radius = 37.3363
 
 [node name="Ship" type="RigidBody2D"]
 mass = 20.0
@@ -21,26 +23,33 @@ script = ExtResource("1_de3ev")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_p0x7k")
 position = Vector2(0, -4)
-scale = Vector2(0.6875, 0.59375)
-texture = ExtResource("1_n2kfc")
+rotation = 0.0431898
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_q3ml3")
 
 [node name="Hull" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_n8e2t")
+shape = SubResource("CircleShape2D_2vxxw")
 
 [node name="LeftBooster" parent="." instance=ExtResource("3_ps1ty")]
-position = Vector2(-50, 0)
-rotation = -1.57079
+position = Vector2(-50, 5.00002)
+rotation = -1.57287
 force = 4000
 action = &"left"
 reverse_action = &"left_reverse"
 
 [node name="RightBooster" parent="." instance=ExtResource("3_ps1ty")]
-position = Vector2(50, 0)
+position = Vector2(50, 5)
 rotation = -1.57079
 force = 4000
 action = &"right"
 reverse_action = &"right_reverse"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("5_4msjt")
+offset = Vector2(496.67, 0)
+script = ExtResource("6_hi0fg")
 
 [node name="omni" type="PointLight2D" parent="."]
 rotation = 0.785397
@@ -48,9 +57,58 @@ scale = Vector2(2, 2)
 energy = 0.5
 texture = ExtResource("5_vdwwe")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(1, -2.00002)
-rotation = 0.785397
-scale = Vector2(3.33525, 3.30014)
-texture = ExtResource("5_2r6wm")
-script = ExtResource("6_hi0fg")
+[node name="Raycasty" type="Node2D" parent="."]
+
+[node name="1" type="RayCast2D" parent="Raycasty"]
+rotation = -0.349066
+target_position = Vector2(0, -900)
+collision_mask = 4
+
+[node name="2" type="RayCast2D" parent="Raycasty"]
+rotation = -0.261799
+target_position = Vector2(0, -950)
+collision_mask = 4
+
+[node name="3" type="RayCast2D" parent="Raycasty"]
+rotation = -0.174533
+target_position = Vector2(0, -950)
+collision_mask = 4
+
+[node name="4" type="RayCast2D" parent="Raycasty"]
+rotation = -0.0872665
+target_position = Vector2(0, -950)
+collision_mask = 4
+
+[node name="5" type="RayCast2D" parent="Raycasty"]
+target_position = Vector2(0, -950)
+collision_mask = 4
+
+[node name="6" type="RayCast2D" parent="Raycasty"]
+rotation = 0.0872665
+target_position = Vector2(0, -950)
+collision_mask = 4
+
+[node name="7" type="RayCast2D" parent="Raycasty"]
+rotation = 0.174533
+target_position = Vector2(0, -950)
+collision_mask = 4
+
+[node name="8" type="RayCast2D" parent="Raycasty"]
+rotation = 0.261799
+target_position = Vector2(0, -950)
+collision_mask = 4
+
+[node name="9" type="RayCast2D" parent="Raycasty"]
+rotation = 0.349066
+target_position = Vector2(0, -900)
+collision_mask = 4
+
+[node name="Bubble" parent="." instance=ExtResource("7_d26ro")]
+position = Vector2(145, -11)
+
+[node name="Rope" type="Node2D" parent="." node_paths=PackedStringArray("body_A", "body_B", "anchor_A", "anchor_B")]
+script = ExtResource("8_m3avw")
+body_A = NodePath("..")
+body_B = NodePath("../Bubble")
+anchor_A = NodePath("..")
+anchor_B = NodePath("../Bubble")

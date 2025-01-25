@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://colbwkc34d10w"]
+
+[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="1_33we5"]
+[ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://enemies/enemy.tscn" id="1_h7bav"]
+[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="2_marxf"]
+
+[node name="TestEnemy" type="Node2D"]
+position = Vector2(290, 204)
+
+[node name="BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_33we5")
+
+[node name="Enemy" parent="." instance=ExtResource("1_h7bav")]
+position = Vector2(67, 80)
+
+[node name="Ship" parent="." instance=ExtResource("2_marxf")]
+position = Vector2(364, 249)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.9
+blend_mode = 1
