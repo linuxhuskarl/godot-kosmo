@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://0ojdpu60lwjo"]
+[gd_scene load_steps=22 format=3 uid="uid://0ojdpu60lwjo"]
 
 [ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="1_0irde"]
 [ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://linras/parallax/third-plan.png" id="2_m02pk"]
@@ -7,7 +7,8 @@
 [ext_resource type="Shader" path="res://shaders/godray.gdshader" id="4_opigt"]
 [ext_resource type="Shader" path="res://shaders/snow.gdshader" id="5_xp2rf"]
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
-[ext_resource type="PackedScene" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
+[ext_resource type="PackedScene" uid="uid://dxtuh1riy1tyw" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
+[ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://SZYMON/[SFX]CthuluIdle.mp3" id="11_jrja4"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="11_y4cxx"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="18_7qsqd"]
 
@@ -244,3 +245,12 @@ debug_color = Color(1, 1, 1, 0.42)
 
 [node name="WaterEffectTest" parent="." instance=ExtResource("10_i2piq")]
 position = Vector2(-526, 3013)
+
+[node name="SFXy" type="Node2D" parent="."]
+position = Vector2(3770, 1140)
+
+[node name="CTHULU" type="AudioStreamPlayer2D" parent="SFXy"]
+stream = ExtResource("11_jrja4")
+volume_db = 14.604
+autoplay = true
+max_distance = 1520.0
