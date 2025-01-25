@@ -41,7 +41,7 @@ script = ExtResource("1_5b2fo")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamInteractive_6tg6a")
-volume_db = 3.074
+volume_db = -10.645
 
 [node name="BubbleSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qme5o")

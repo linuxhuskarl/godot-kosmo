@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ke3ogiylbg2b"]
 
 [ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="1_j7sl3"]
-[ext_resource type="Shader" path="res://water_shader.gdshader" id="2_gtikc"]
+[ext_resource type="Shader" path="res://SZYMON/water_shader.gdshader" id="2_gtikc"]
 [ext_resource type="Texture2D" path="res://SZYMON/water.tres" id="7_eb5qq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6xfx"]

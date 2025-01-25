@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccflu6ymfimxd"]
+
+[ext_resource type="Shader" path="res://SZYMON/FloatingWater.gdshader" id="1_0mmnv"]
+[ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="2_o6cir"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_80gc1"]
+noise_type = 2
+frequency = 0.013
+fractal_type = 2
+fractal_gain = 0.98
+fractal_weighted_strength = 0.75
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ti2lm"]
+seamless = true
+seamless_blend_skirt = 0.64
+noise = SubResource("FastNoiseLite_80gc1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vevy"]
+shader = ExtResource("1_0mmnv")
+shader_parameter/color = Color(0.77201, 0.731747, 0.808769, 1)
+shader_parameter/speed = Vector2(0.03, 0.07)
+shader_parameter/wave_strength = 2.0
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_ti2lm")
+
+[node name="Icon2" type="Sprite2D"]
+material = SubResource("ShaderMaterial_7vevy")
+position = Vector2(5941.75, -2108.5)
+scale = Vector2(102.145, 76.9766)
+texture = ExtResource("2_o6cir")
