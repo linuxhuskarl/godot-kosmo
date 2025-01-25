@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dg7uyvw40s7ir" path="res://maciej/cone_light.png" id="5_4msjt"]
 [ext_resource type="Texture2D" uid="uid://bfndkr5qsecn" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="5_vdwwe"]
 [ext_resource type="Script" path="res://ships/point_light_2d.gd" id="6_hi0fg"]
-[ext_resource type="PackedScene" path="res://ships/bubble.tscn" id="7_d26ro"]
+[ext_resource type="PackedScene" uid="uid://dvoicmvfqip0w" path="res://ships/bubble.tscn" id="7_d26ro"]
 [ext_resource type="Script" path="res://rope/rope.gd" id="8_m3avw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p0x7k"]

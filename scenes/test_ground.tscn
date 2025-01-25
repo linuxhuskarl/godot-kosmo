@@ -253,9 +253,9 @@ position = Vector2(3770, 1140)
 
 [node name="CTHULU" type="AudioStreamPlayer2D" parent="SFXy"]
 stream = ExtResource("11_jrja4")
-volume_db = 14.604
+volume_db = 9.793
 autoplay = true
-max_distance = 1520.0
+max_distance = 1300.0
 
 [node name="Enemy" parent="." instance=ExtResource("12_vvmqn")]
 position = Vector2(1019, 1418)
