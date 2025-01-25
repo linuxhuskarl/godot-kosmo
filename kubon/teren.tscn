@@ -1079,6 +1079,8 @@ tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 271
 
 [node name="SS2D_Shape_Closed" type="Node2D" parent="."]
 texture_filter = 3

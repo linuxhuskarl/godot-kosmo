@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://iweybw48jc01"]
+
+[ext_resource type="Texture2D" uid="uid://y86od0y82k7l" path="res://hook.png" id="1_haej3"]
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_sfe8d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hpaxc"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ol0y4"]
+radius = 400.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_sfe8d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 13)
+texture = ExtResource("1_haej3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hpaxc")
+
+[node name="BubbleDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleDetector"]
+shape = SubResource("CircleShape2D_ol0y4")
