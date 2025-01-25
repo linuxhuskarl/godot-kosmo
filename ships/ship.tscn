@@ -74,46 +74,46 @@ texture = ExtResource("5_vdwwe")
 
 [node name="1" type="RayCast2D" parent="Raycasty"]
 rotation = -0.349066
-target_position = Vector2(0, -900)
+target_position = Vector2(0, -300)
 collision_mask = 4
 
 [node name="2" type="RayCast2D" parent="Raycasty"]
 rotation = -0.261799
-target_position = Vector2(0, -950)
+target_position = Vector2(0, -400)
 collision_mask = 4
 
 [node name="3" type="RayCast2D" parent="Raycasty"]
 rotation = -0.174533
-target_position = Vector2(0, -950)
+target_position = Vector2(0, -400)
 collision_mask = 4
 
 [node name="4" type="RayCast2D" parent="Raycasty"]
 rotation = -0.0872665
-target_position = Vector2(0, -950)
+target_position = Vector2(0, -400)
 collision_mask = 4
 
 [node name="5" type="RayCast2D" parent="Raycasty"]
-target_position = Vector2(0, -950)
+target_position = Vector2(0, -400)
 collision_mask = 4
 
 [node name="6" type="RayCast2D" parent="Raycasty"]
 rotation = 0.0872665
-target_position = Vector2(0, -950)
+target_position = Vector2(0, -400)
 collision_mask = 4
 
 [node name="7" type="RayCast2D" parent="Raycasty"]
 rotation = 0.174533
-target_position = Vector2(0, -950)
+target_position = Vector2(0, -400)
 collision_mask = 4
 
 [node name="8" type="RayCast2D" parent="Raycasty"]
 rotation = 0.261799
-target_position = Vector2(0, -950)
+target_position = Vector2(0, -400)
 collision_mask = 4
 
 [node name="9" type="RayCast2D" parent="Raycasty"]
 rotation = 0.349066
-target_position = Vector2(0, -900)
+target_position = Vector2(0, -300)
 collision_mask = 4
 
 [node name="Bubble" parent="." instance=ExtResource("7_d26ro")]
