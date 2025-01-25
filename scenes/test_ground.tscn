@@ -7,7 +7,7 @@
 [ext_resource type="Shader" path="res://shaders/godray.gdshader" id="4_opigt"]
 [ext_resource type="Shader" path="res://shaders/snow.gdshader" id="5_xp2rf"]
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
-[ext_resource type="PackedScene" uid="uid://dxtuh1riy1tyw" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
+[ext_resource type="PackedScene" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="11_y4cxx"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="18_7qsqd"]
 
