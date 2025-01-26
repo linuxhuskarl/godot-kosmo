@@ -1,10 +1,23 @@
 class_name Bubble extends RigidBody2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+signal died
 
+@export var health: float = 100.0
+@export var max_health: float = 100.0
+@export var health_regen: float = 5.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+@onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 func _process(delta: float) -> void:
-	pass
+	if health > 0.0 and health < max_health:
+		health += health_regen * delta
+	point_light_2d.color = Color(Color.BLACK).lerp(Color.WHITE, clampf(health/max_health, 0.0, 1.0))
+	if not animation_player.is_playing():
+		animation_player.play("default")
+
+func hurt(dmg: float) -> void:
+	health -= dmg
+	animation_player.play("hit")
+	if health < 0.0:
+		died.emit()

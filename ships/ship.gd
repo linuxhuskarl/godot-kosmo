@@ -5,9 +5,9 @@ class_name Ship extends RigidBody2D
 
 
 func check_enemy_and_deter(ray: RayCast2D) -> void:
-	var enemy := ray.get_collider() as Enemy
-	if enemy:
-		enemy.deter(global_position)
+	var body = ray.get_collider()
+	if (body as Enemy): # or (body as Cthulhu):
+		body.deter(global_position)
 
 
 func _process(delta: float) -> void:

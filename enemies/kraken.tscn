@@ -1,0 +1,249 @@
+[gd_scene load_steps=15 format=3 uid="uid://b0pt7wolfol3f"]
+
+[ext_resource type="Script" path="res://enemies/cthulhu.gd" id="1_crrwh"]
+[ext_resource type="Texture2D" uid="uid://c7moyn2rpgilp" path="res://linras/monster/monster arm.png" id="1_eh12f"]
+[ext_resource type="Texture2D" uid="uid://lv52bdhq8tuv" path="res://linras/monster/monster head.png" id="2_40wan"]
+[ext_resource type="Texture2D" uid="uid://dnt3h4akqaaof" path="res://linras/monster/monster macka.png" id="2_pdy31"]
+[ext_resource type="Texture2D" uid="uid://cif7g1ovxinxe" path="res://linras/monster/monster body.png" id="3_isgrw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_333rf"]
+radius = 82.28
+
+[sub_resource type="Gradient" id="Gradient_upu0x"]
+offsets = PackedFloat32Array(0, 0.176991, 0.286136, 0.356932)
+colors = PackedColorArray(1, 1, 1, 1, 0.522013, 0.522013, 0.522013, 1, 0.143017, 0.143017, 0.143017, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7xgn8"]
+gradient = SubResource("Gradient_upu0x")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_1rrlm"]
+target_nodepath = NodePath("../../IKTargets/MackaTarget")
+tip_nodepath = NodePath("body/head/mouth/macka/macka2/macka3/macka4")
+ccdik_data_chain_length = 5
+joint_data/0/bone_index = 5
+joint_data/0/bone2d_node = NodePath("body/head/mouth/macka/macka2/macka3")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -45.0
+joint_data/0/constraint_angle_max = 30.0
+joint_data/0/constraint_angle_invert = true
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 4
+joint_data/1/bone2d_node = NodePath("body/head/mouth/macka/macka2")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = -40.0
+joint_data/1/constraint_angle_max = 30.0
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 3
+joint_data/2/bone2d_node = NodePath("body/head/mouth/macka")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = true
+joint_data/2/constraint_angle_min = -20.0
+joint_data/2/constraint_angle_max = 45.0
+joint_data/2/constraint_angle_invert = true
+joint_data/2/constraint_in_localspace = true
+joint_data/2/editor_draw_gizmo = true
+joint_data/3/bone_index = 2
+joint_data/3/bone2d_node = NodePath("body/head/mouth")
+joint_data/3/rotate_from_joint = false
+joint_data/3/enable_constraint = true
+joint_data/3/constraint_angle_min = -30.0
+joint_data/3/constraint_angle_max = 15.0
+joint_data/3/constraint_angle_invert = true
+joint_data/3/constraint_in_localspace = true
+joint_data/3/editor_draw_gizmo = true
+joint_data/4/bone_index = 1
+joint_data/4/bone2d_node = NodePath("body/head")
+joint_data/4/rotate_from_joint = false
+joint_data/4/enable_constraint = true
+joint_data/4/constraint_angle_min = -308.571
+joint_data/4/constraint_angle_max = -13.005
+joint_data/4/constraint_angle_invert = true
+joint_data/4/constraint_in_localspace = true
+joint_data/4/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_opi1q"]
+target_nodepath = NodePath("../../IKTargets/HandTarget")
+tip_nodepath = NodePath("body/shoulder/arm/hand")
+ccdik_data_chain_length = 2
+joint_data/0/bone_index = 8
+joint_data/0/bone2d_node = NodePath("body/shoulder/arm")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 7
+joint_data/1/bone2d_node = NodePath("body/shoulder")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = false
+joint_data/1/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_4oq3p"]
+enabled = true
+modification_count = 2
+modifications/0 = SubResource("SkeletonModification2DCCDIK_1rrlm")
+modifications/1 = SubResource("SkeletonModification2DCCDIK_opi1q")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fgcp"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4u6s"]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gpu0f"]
+radius = 1077.2
+
+[node name="Kraken" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_crrwh")
+
+[node name="HeadCollider" type="CollisionShape2D" parent="."]
+position = Vector2(44, -66)
+shape = SubResource("CircleShape2D_333rf")
+
+[node name="Body" type="Node2D" parent="."]
+position = Vector2(-522, -442)
+scale = Vector2(0.61, 0.61)
+
+[node name="polygons" type="Node2D" parent="Body"]
+
+[node name="Hand" type="Polygon2D" parent="Body/polygons"]
+light_mask = 6
+visibility_layer = 6
+position = Vector2(521, 216)
+texture = ExtResource("1_eh12f")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(184.939, -18.9882, 40.7987, -22.9193, -31.2714, 75.358, 48.6609, 206.394, 72.2474, 236.533, 112.869, 281.085, 160.042, 353.155, 203.284, 440.95, 228.181, 553.641, 298.941, 667.643, 619.98, 785.576, 731.361, 692.54, 642.256, 516.951, 485.012, 463.226, 402.459, 413.432, 329.079, 367.569, 267.492, 288.947, 213.767, 232.602, 205.905, 176.256, 212.456, 133.014, 149.525, 228.409)
+uv = PackedVector2Array(184.939, -18.9882, 40.7987, -22.9193, -31.2714, 75.358, 48.6609, 206.394, 72.2474, 236.533, 112.869, 281.085, 160.042, 353.155, 203.284, 440.95, 228.181, 553.641, 298.941, 667.643, 619.98, 785.576, 731.361, 692.54, 642.256, 516.951, 485.012, 463.226, 402.459, 413.432, 329.079, 367.569, 267.492, 288.947, 213.767, 232.602, 205.905, 176.256, 212.456, 133.014, 149.525, 228.409)
+polygons = [PackedInt32Array(2, 0, 1), PackedInt32Array(3, 19, 0, 2), PackedInt32Array(3, 4, 18, 19), PackedInt32Array(6, 16, 17, 5), PackedInt32Array(7, 6, 16, 15), PackedInt32Array(7, 8, 14, 15), PackedInt32Array(9, 13, 14, 8), PackedInt32Array(13, 9, 10, 12), PackedInt32Array(12, 11, 10), PackedInt32Array(4, 18, 20), PackedInt32Array(5, 20, 17), PackedInt32Array(5, 20, 4), PackedInt32Array(17, 20, 18)]
+bones = ["body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0), "body/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3/macka4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0.5), "body/shoulder/arm", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5), "body/shoulder/arm/hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5)]
+internal_vertex_count = 1
+
+[node name="Macka1" type="Polygon2D" parent="Body/polygons"]
+light_mask = 6
+visibility_layer = 6
+texture = ExtResource("2_pdy31")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(1057.94, 667.487, 1009.42, 607.164, 916.313, 570.446, 778.619, 558.644, 642.236, 567.823, 546.506, 514.057, 453.399, 462.914, 361.603, 422.261, 259.317, 376.363, 167.521, 302.927, 109.82, 218.999, 65.2339, 90.4847, 61.2998, -2.6225, -4.26871, -10.4907, -20.0051, 100.976, 3.59952, 250.472, 66.5453, 359.315, 181.946, 470.782, 318.328, 532.416, 403.567, 580.937, 488.806, 645.194, 616.009, 718.631, 775.996, 744.858, 888.774, 747.481, 1010.73, 752.726, 1055.32, 705.517)
+uv = PackedVector2Array(1057.94, 667.487, 1009.42, 607.164, 916.313, 570.446, 778.619, 558.644, 642.236, 567.823, 546.506, 514.057, 453.399, 462.914, 361.603, 422.261, 259.317, 376.363, 167.521, 302.927, 109.82, 218.999, 65.2339, 90.4847, 61.2998, -2.6225, -4.26871, -10.4907, -20.0051, 100.976, 3.59952, 250.472, 66.5453, 359.315, 181.946, 470.782, 318.328, 532.416, 403.567, 580.937, 488.806, 645.194, 616.009, 718.631, 775.996, 744.858, 888.774, 747.481, 1010.73, 752.726, 1055.32, 705.517)
+polygons = [PackedInt32Array(1, 24, 25, 0), PackedInt32Array(1, 2, 23, 24), PackedInt32Array(3, 22, 23, 2), PackedInt32Array(4, 21, 22, 3), PackedInt32Array(4, 5, 20, 21), PackedInt32Array(6, 19, 20, 5), PackedInt32Array(6, 7, 18, 19), PackedInt32Array(8, 17, 18, 7), PackedInt32Array(8, 9, 16, 17), PackedInt32Array(10, 15, 16, 9), PackedInt32Array(14, 15, 10, 11), PackedInt32Array(13, 12, 11, 14)]
+bones = ["body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5), "body/head/mouth", PackedFloat32Array(0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0), "body/head/mouth/macka", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3/macka4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/shoulder/arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/shoulder/arm/hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Head" type="Polygon2D" parent="Body/polygons"]
+light_mask = 6
+visibility_layer = 6
+texture = ExtResource("2_40wan")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(897.442, 401.884, 566.598, 629.212, 958.333, 960.055, 1396.75, 645.45, 1108.53, 454.656)
+uv = PackedVector2Array(897.442, 401.884, 566.598, 629.212, 958.333, 960.055, 1396.75, 645.45, 1108.53, 454.656)
+polygons = [PackedInt32Array(1, 0, 4, 3, 2)]
+bones = ["body", PackedFloat32Array(0, 0, 0.5, 0, 0), "body/head", PackedFloat32Array(0.5, 0.5, 0, 0.5, 0.5), "body/head/mouth", PackedFloat32Array(0, 0, 0, 0, 0), "body/head/mouth/macka", PackedFloat32Array(0, 0, 0, 0, 0), "body/head/mouth/macka/macka2", PackedFloat32Array(0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3", PackedFloat32Array(0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3/macka4", PackedFloat32Array(0, 0, 0, 0, 0), "body/shoulder", PackedFloat32Array(0, 0, 0, 0, 0), "body/shoulder/arm", PackedFloat32Array(0, 0, 0, 0, 0), "body/shoulder/arm/hand", PackedFloat32Array(0, 0, 0, 0, 0)]
+
+[node name="PointLight2D" type="PointLight2D" parent="Body/polygons/Head"]
+position = Vector2(838, 586)
+color = Color(1, 0.933333, 0, 1)
+texture = SubResource("GradientTexture2D_7xgn8")
+
+[node name="Body" type="Polygon2D" parent="Body/polygons"]
+light_mask = 6
+visibility_layer = 6
+texture = ExtResource("3_isgrw")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(385.059, 991.305, 1061.6, 333.16, 1470.38, 363.819, 1474.47, 1118.03, 1092.26, 1598.35, 896.041, 1588.13, 685.516, 1197.74, 385.059, 1077.15)
+uv = PackedVector2Array(385.059, 991.305, 1061.6, 333.16, 1470.38, 363.819, 1474.47, 1118.03, 1092.26, 1598.35, 896.041, 1588.13, 685.516, 1197.74, 385.059, 1077.15)
+polygons = [PackedInt32Array(0, 7, 6, 5, 4, 3, 2, 1)]
+bones = ["body", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "body/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3/macka4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "body/shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "body/shoulder/arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "body/shoulder/arm/hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Body"]
+modification_stack = SubResource("SkeletonModificationStack2D_4oq3p")
+
+[node name="body" type="Bone2D" parent="Body/Skeleton2D"]
+position = Vector2(1017, 913)
+rest = Transform2D(1, 0, 0, 1, 1017, 913)
+
+[node name="head" type="Bone2D" parent="Body/Skeleton2D/body"]
+position = Vector2(-45, -304)
+rest = Transform2D(1, 0, 0, 1, -45, -304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="mouth" type="Bone2D" parent="Body/Skeleton2D/body/head"]
+position = Vector2(-301, 37)
+rest = Transform2D(1, 0, 0, 1, -301, 37)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="macka" type="Bone2D" parent="Body/Skeleton2D/body/head/mouth"]
+position = Vector2(-239, -119)
+rest = Transform2D(1, 0, 0, 1, -239, -119)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="macka2" type="Bone2D" parent="Body/Skeleton2D/body/head/mouth/macka"]
+position = Vector2(-288, -153)
+rest = Transform2D(1, 0, 0, 1, -288, -153)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="macka3" type="Bone2D" parent="Body/Skeleton2D/body/head/mouth/macka/macka2"]
+position = Vector2(-103, -170)
+rest = Transform2D(1, 0, 0, 1, -103, -170)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="macka4" type="Bone2D" parent="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3"]
+position = Vector2(-10, -173)
+rest = Transform2D(1, 0, 0, 1, -10, -173)
+
+[node name="MackaGrabber" type="Area2D" parent="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3/macka4"]
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3/macka4/MackaGrabber"]
+shape = SubResource("CircleShape2D_4fgcp")
+
+[node name="shoulder" type="Bone2D" parent="Body/Skeleton2D/body"]
+position = Vector2(-157.984, -191.689)
+rest = Transform2D(1, 0, 0, 1, -157.984, -191.689)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="arm" type="Bone2D" parent="Body/Skeleton2D/body/shoulder"]
+position = Vector2(-180.328, -257.377)
+rest = Transform2D(1, 0, 0, 1, -180.328, -257.377)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="hand" type="Bone2D" parent="Body/Skeleton2D/body/shoulder/arm"]
+position = Vector2(-78.6885, -203.279)
+rest = Transform2D(1, 0, 0, 1, -78.6885, -203.279)
+
+[node name="HandGrabber" type="Area2D" parent="Body/Skeleton2D/body/shoulder/arm/hand"]
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Skeleton2D/body/shoulder/arm/hand/HandGrabber"]
+position = Vector2(39.4261, 107.346)
+shape = SubResource("CircleShape2D_u4u6s")
+
+[node name="IKTargets" type="Node2D" parent="."]
+position = Vector2(-522, -442)
+
+[node name="MackaIdleTarget" type="Marker2D" parent="IKTargets"]
+position = Vector2(315, 375)
+
+[node name="MackaTarget" type="Marker2D" parent="IKTargets"]
+
+[node name="HandIdleTarget" type="Marker2D" parent="IKTargets"]
+position = Vector2(249, 612)
+
+[node name="HandTarget" type="Marker2D" parent="IKTargets"]
+
+[node name="DetectionRange" type="Area2D" parent="."]
+position = Vector2(-522, -442)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange"]
+position = Vector2(232, 489)
+shape = SubResource("CircleShape2D_gpu0f")
+debug_color = Color(0.576298, 0.385515, 1, 0.42)
+
+[connection signal="body_entered" from="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3/macka4/MackaGrabber" to="." method="_on_macka_grabber_body_entered"]
+[connection signal="body_entered" from="Body/Skeleton2D/body/shoulder/arm/hand/HandGrabber" to="." method="_on_hand_grabber_body_entered"]

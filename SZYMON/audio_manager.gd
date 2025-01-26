@@ -37,10 +37,10 @@ func _process(delta):
 
 func EngineOn():
 	engine_on = true
-	print("Wciśnięto klawisze lewo albo prawo!");
+	#print("Wciśnięto klawisze lewo albo prawo!");
 	engine_player.set("parameters/switch_to_clip", "EngineOn");
 
 func EngineOff():
 	engine_on = false
-	print("Puszczony klawisz A/D");
+	#print("Puszczony klawisz A/D");
 	engine_player.set("parameters/switch_to_clip", "EngineOff");

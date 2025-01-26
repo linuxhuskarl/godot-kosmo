@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://iweybw48jc01"]
+[gd_scene load_steps=11 format=3 uid="uid://iweybw48jc01"]
 
-[ext_resource type="Texture2D" uid="uid://y86od0y82k7l" path="res://hook.png" id="1_haej3"]
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_sfe8d"]
+[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="2_xkpoj"]
+[ext_resource type="Texture2D" uid="uid://bpic17ctsq2wv" path="res://linras/boids/fish.png" id="3_b2sk6"]
 
 [sub_resource type="Shader" id="Shader_awuep"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's CanvasItemMaterial.
@@ -14,7 +15,7 @@ render_mode blend_mix,light_only;
 shader = SubResource("Shader_awuep")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hpaxc"]
-radius = 12.0
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ol0y4"]
 radius = 400.0
@@ -29,17 +30,26 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_er7l1"]
+radius = 48.0416
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_sfe8d")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.5, 0.5, 0.5, 1)
+texture = ExtResource("2_xkpoj")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 6
 visibility_layer = 6
 material = SubResource("ShaderMaterial_q2b14")
-position = Vector2(1, 13)
-texture = ExtResource("1_haej3")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_b2sk6")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hpaxc")
@@ -53,3 +63,10 @@ shape = SubResource("CircleShape2D_ol0y4")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = SubResource("GradientTexture2D_e5wyd")
+
+[node name="BiteArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BiteArea"]
+shape = SubResource("CircleShape2D_er7l1")
+
+[connection signal="body_entered" from="BiteArea" to="." method="_on_bite_area_body_entered"]

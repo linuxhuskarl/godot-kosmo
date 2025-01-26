@@ -5,13 +5,13 @@ enum EnemyState {NONE, IDLE, CHASE, FLEE}
 @export var state := EnemyState.IDLE
 @export var target: Node2D
 @export var max_speed: float = 100
-@export var fleeing_time: float = 1.0
+@export var fleeing_time: float = 2.0
 @export var min_distance: float = 70.0
 
-var _next_state: EnemyState = EnemyState.NONE
 var _was_in_light: bool = false
 var _the_source_of_light: Vector2
 var flee_timer: SceneTreeTimer
+var already_attacked := true
 @onready var bubble_detector: Area2D = $BubbleDetector
 
 # Called when the node enters the scene tree for the first time.
@@ -21,11 +21,15 @@ func _ready() -> void:
 func change_state(new_state: EnemyState) -> void:
 	print_debug(EnemyState.keys()[new_state])
 	match new_state:
+		EnemyState.CHASE:
+			already_attacked = false
 		EnemyState.FLEE:
+			already_attacked = true
 			var flee_timer := get_tree().create_timer(fleeing_time)
 			flee_timer.timeout.connect(func(): change_state(EnemyState.IDLE))
 		EnemyState.IDLE:
 			_was_in_light = false
+			already_attacked = false
 	state = new_state
 
 func deter(source: Vector2):
@@ -85,3 +89,14 @@ func move_to(delta, gl_pos: Vector2):
 func move_away(delta, gl_pos: Vector2):
 	velocity = velocity.move_toward(-global_position.direction_to(gl_pos) * max_speed, 2 * max_speed * delta)
 	velocity = velocity.normalized() * min(max_speed, velocity.length())
+
+
+func _on_bite_area_body_entered(body: Node2D) -> void:
+	if already_attacked:
+		return
+	var bubble := body as Bubble
+	if bubble:
+		# toward mouth
+		bubble.apply_central_impulse(500 * global_position.direction_to(bubble.global_position))
+		change_state(EnemyState.FLEE)
+		bubble.hurt(50.0)
