@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bty7b5c1a2isx"]
+[gd_scene load_steps=17 format=3 uid="uid://bty7b5c1a2isx"]
 
 [ext_resource type="Script" path="res://scenes/tutorial_scene.gd" id="1_2gijl"]
 [ext_resource type="PackedScene" uid="uid://bqqb7udfolyq4" path="res://kubon/tutorial_teren.tscn" id="1_8wdyi"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="9_nkyxo"]
 [ext_resource type="PackedScene" uid="uid://1dfxgxeso27s" path="res://kubon/Tutorial_4.tscn" id="10_0i518"]
 [ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://linras/parallax/second-plan.png" id="10_fvq2i"]
+[ext_resource type="PackedScene" path="res://kubon/Tutorial_1_2.tscn" id="11_3j0ru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4re4"]
 size = Vector2(580, 396)
@@ -65,28 +66,34 @@ update_scale = false
 [node name="Tutorials" type="Node2D" parent="."]
 
 [node name="Tutorial1" parent="Tutorials" instance=ExtResource("3_uiisn")]
-offset_left = -1279.0
-offset_top = 1308.0
-offset_right = -1279.0
-offset_bottom = 1308.0
+offset_left = -1685.0
+offset_top = 1404.0
+offset_right = -1685.0
+offset_bottom = 1404.0
 
 [node name="Tutorial2" parent="Tutorials" instance=ExtResource("4_p7glp")]
-offset_left = -763.0
-offset_top = 1504.0
-offset_right = -763.0
-offset_bottom = 1504.0
+offset_left = -213.0
+offset_top = 1473.0
+offset_right = -213.0
+offset_bottom = 1473.0
 
 [node name="Tutorial3" parent="Tutorials" instance=ExtResource("5_njgrk")]
-offset_left = -536.0
-offset_top = 1641.0
-offset_right = -536.0
-offset_bottom = 1641.0
+offset_left = 22.0
+offset_top = 1580.0
+offset_right = 22.0
+offset_bottom = 1580.0
 
 [node name="Tutorial4" parent="Tutorials" instance=ExtResource("10_0i518")]
-offset_left = 399.0
-offset_top = 1279.0
-offset_right = 399.0
-offset_bottom = 1279.0
+offset_left = 706.0
+offset_top = 1191.0
+offset_right = 706.0
+offset_bottom = 1191.0
+
+[node name="Tutorial5" parent="Tutorials" instance=ExtResource("11_3j0ru")]
+offset_left = -951.0
+offset_top = 1440.0
+offset_right = -951.0
+offset_bottom = 1440.0
 
 [node name="Ending" type="Area2D" parent="."]
 position = Vector2(3298, 408)
