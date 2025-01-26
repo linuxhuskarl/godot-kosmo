@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6my65hishhlu"]
+[gd_scene load_steps=7 format=3 uid="uid://b6my65hishhlu"]
 
 [ext_resource type="Script" path="res://kubon/fail_screen.gd" id="1_mn12q"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="2_2fqoh"]
 [ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://linras/parallax/second-plan.png" id="3_iypk1"]
 [ext_resource type="FontFile" uid="uid://b7f31kpu6udej" path="res://kubon/Silure-yr0Z.ttf" id="4_musu8"]
+[ext_resource type="StyleBox" uid="uid://clb2fsgyvp5pa" path="res://themes/spacey/panels/spacey_button_hovered.tres" id="5_jrh8p"]
 
 [sub_resource type="FontVariation" id="FontVariation_50rx8"]
 variation_embolden = 1.0
@@ -73,9 +74,10 @@ theme_override_font_sizes/font_size = 60
 text = "Better luck next time!"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_styles/focus = ExtResource("5_jrh8p")
 text = "Back to Main Menu"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_button_pressed"]
