@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bty7b5c1a2isx"]
+[gd_scene load_steps=16 format=3 uid="uid://bty7b5c1a2isx"]
 
 [ext_resource type="Script" path="res://scenes/tutorial_scene.gd" id="1_2gijl"]
 [ext_resource type="PackedScene" uid="uid://bqqb7udfolyq4" path="res://kubon/tutorial_teren.tscn" id="1_8wdyi"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="8_wwswr"]
 [ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://linras/parallax/third-plan.png" id="9_atfkn"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="9_nkyxo"]
+[ext_resource type="PackedScene" uid="uid://1dfxgxeso27s" path="res://kubon/Tutorial_4.tscn" id="10_0i518"]
 [ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://linras/parallax/second-plan.png" id="10_fvq2i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4re4"]
@@ -70,16 +71,22 @@ offset_right = -1279.0
 offset_bottom = 1308.0
 
 [node name="Tutorial2" parent="Tutorials" instance=ExtResource("4_p7glp")]
-offset_left = -273.0
-offset_top = 1488.0
-offset_right = -273.0
-offset_bottom = 1488.0
+offset_left = -763.0
+offset_top = 1504.0
+offset_right = -763.0
+offset_bottom = 1504.0
 
 [node name="Tutorial3" parent="Tutorials" instance=ExtResource("5_njgrk")]
-offset_left = 1182.0
-offset_top = 1120.0
-offset_right = 1182.0
-offset_bottom = 1120.0
+offset_left = -536.0
+offset_top = 1641.0
+offset_right = -536.0
+offset_bottom = 1641.0
+
+[node name="Tutorial4" parent="Tutorials" instance=ExtResource("10_0i518")]
+offset_left = 399.0
+offset_top = 1279.0
+offset_right = 399.0
+offset_bottom = 1279.0
 
 [node name="Ending" type="Area2D" parent="."]
 position = Vector2(3298, 408)
