@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx30wd2ckndaq"]
+[gd_scene load_steps=7 format=3 uid="uid://bx30wd2ckndaq"]
 
 [ext_resource type="Script" path="res://kubon/end_screen.gd" id="1_nna8b"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="2_ukeqh"]
 [ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://linras/parallax/second-plan.png" id="3_3v1y5"]
 [ext_resource type="FontFile" uid="uid://b7f31kpu6udej" path="res://kubon/Silure-yr0Z.ttf" id="4_f06f5"]
+[ext_resource type="StyleBox" uid="uid://clb2fsgyvp5pa" path="res://themes/spacey/panels/spacey_button_hovered.tres" id="5_vvajo"]
 
 [sub_resource type="FontVariation" id="FontVariation_w0yry"]
 variation_embolden = 1.0
@@ -81,9 +82,10 @@ theme_override_font_sizes/font_size = 45
 text = "<SCORE>"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_styles/focus = ExtResource("5_vvajo")
 text = "Back to Main Menu"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_button_pressed"]
