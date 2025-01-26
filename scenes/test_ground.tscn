@@ -1,67 +1,26 @@
-[gd_scene load_steps=24 format=3 uid="uid://0ojdpu60lwjo"]
+[gd_scene load_steps=26 format=3 uid="uid://0ojdpu60lwjo"]
 
 [ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="1_0irde"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_0lo2f"]
 [ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://linras/parallax/third-plan.png" id="2_m02pk"]
 [ext_resource type="Script" path="res://boids/boid_spawner.gd" id="3_5kw40"]
 [ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://linras/parallax/second-plan.png" id="3_fl33u"]
-[ext_resource type="Shader" path="res://shaders/godray.gdshader" id="4_opigt"]
-[ext_resource type="Shader" path="res://shaders/snow.gdshader" id="5_xp2rf"]
+[ext_resource type="PackedScene" uid="uid://b0pt7wolfol3f" path="res://enemies/kraken.tscn" id="8_7h0lf"]
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
-[ext_resource type="PackedScene" uid="uid://dxtuh1riy1tyw" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
+[ext_resource type="PackedScene" uid="uid://w0l5f7k7a1b5" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
+[ext_resource type="PackedScene" path="res://kubon/Tutorial_1.tscn" id="11_fc3lb"]
 [ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://SZYMON/[SFX]CthuluIdle.mp3" id="11_jrja4"]
-[ext_resource type="PackedScene" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
-[ext_resource type="PackedScene" uid="uid://cla4c4l7pivck" path="res://kubon/Tutorial_1.tscn" id="11_fc3lb"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="11_y4cxx"]
+[ext_resource type="PackedScene" path="res://kubon/Tutorial_2.tscn" id="12_sujeh"]
 [ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://enemies/enemy.tscn" id="12_vvmqn"]
-[ext_resource type="PackedScene" uid="uid://bx0c4rtbcuvee" path="res://kubon/Tutorial_2.tscn" id="12_sujeh"]
-[ext_resource type="PackedScene" uid="uid://by0fguatryf3p" path="res://kubon/Tutorial_3.tscn" id="13_p624x"]
+[ext_resource type="PackedScene" path="res://kubon/Tutorial_3.tscn" id="13_p624x"]
+[ext_resource type="Shader" path="res://shaders/snow.gdshader" id="15_q6ias"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="18_7qsqd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_klmxs"]
-shader = ExtResource("4_opigt")
-shader_parameter/angle = 0.005
-shader_parameter/position = -0.065
-shader_parameter/spread = 0.757
-shader_parameter/cutoff = 0.05
-shader_parameter/falloff = 1.0
-shader_parameter/edge_fade = 0.266
-shader_parameter/speed = 1.0
-shader_parameter/ray1_density = 8.0
-shader_parameter/ray2_density = 30.0
-shader_parameter/ray2_intensity = 0.251
-shader_parameter/color = Color(0.62, 1, 0.968333, 0.8)
-shader_parameter/hdr = true
-shader_parameter/seed = 5.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x15cd"]
-shader = ExtResource("5_xp2rf")
-shader_parameter/spread = 0.5
-shader_parameter/size = 0.25
-shader_parameter/snow_color = Color(1, 1, 1, 1)
-shader_parameter/snow_transparency = 0.2
-shader_parameter/speed = 0.1
-shader_parameter/wind = 2.0
-shader_parameter/num_of_layers = 10
-
-[sub_resource type="Gradient" id="Gradient_nstwu"]
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2pdx"]
-gradient = SubResource("Gradient_nstwu")
-fill_from = Vector2(0.982906, 0.367521)
-fill_to = Vector2(0, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6om3"]
-shader = ExtResource("5_xp2rf")
-shader_parameter/spread = 0.5
-shader_parameter/size = 0.1
-shader_parameter/snow_color = Color(1, 1, 1, 1)
-shader_parameter/snow_transparency = 0.2
-shader_parameter/speed = 0.05
-shader_parameter/wind = 2.0
-shader_parameter/num_of_layers = 10
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3yoa"]
+size = Vector2(580, 396)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0r8h"]
 size = Vector2(455.75, 629)
@@ -75,7 +34,27 @@ size = Vector2(521, 384.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mkfw"]
 size = Vector2(557, 246.125)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q856l"]
+shader = ExtResource("15_q6ias")
+shader_parameter/spread = 0.0
+shader_parameter/size = 0.02
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/snow_transparency = 0.2
+shader_parameter/speed = 0.1
+shader_parameter/wind = 0.0
+shader_parameter/num_of_layers = 10
+
+[sub_resource type="Gradient" id="Gradient_a6on2"]
+offsets = PackedFloat32Array(0.0058997, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_161um"]
+gradient = SubResource("Gradient_a6on2")
+width = 4000
+height = 2000
+
 [node name="TestGround" type="Node2D"]
+script = ExtResource("1_0lo2f")
 
 [node name="WorldBounds" type="Node2D" parent="."]
 
@@ -140,117 +119,59 @@ centered = false
 
 [node name="ParallaxLayer3" type="Parallax2D" parent="ParallaxBackground"]
 z_index = -98
+scroll_scale = Vector2(0.9, 0.9)
 repeat_size = Vector2(3072, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 texture = ExtResource("3_fl33u")
 centered = false
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(441, 2728)
-limit_left = 0
-limit_top = 0
-limit_right = 6144
-limit_bottom = 3072
-position_smoothing_enabled = true
-position_smoothing_speed = 1.0
-
-[node name="Ship" parent="." instance=ExtResource("1_0irde")]
-position = Vector2(441, 2728)
-collision_mask = 3
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Ship"]
-remote_path = NodePath("../../Camera2D")
-update_rotation = false
-update_scale = false
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-energy = 0.7
-blend_mode = 1
-
-[node name="BoidSpawner" type="Node2D" parent="."]
-position = Vector2(1000, 128)
-script = ExtResource("3_5kw40")
-max_boids = 10
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Godrays" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_klmxs")
-offset_left = -152.0
-offset_right = 1840.0
-offset_bottom = 600.0
-
-[node name="Silt" type="TextureRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_x15cd")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_j2pdx")
-flip_h = true
-flip_v = true
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-layer = -1
-visible = false
-
-[node name="Silt" type="TextureRect" parent="CanvasLayer2"]
-material = SubResource("ShaderMaterial_p6om3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture = SubResource("GradientTexture2D_j2pdx")
-flip_h = true
-flip_v = true
-
 [node name="Terrain" parent="." instance=ExtResource("8_vkj6k")]
 
-[node name="MusicChanger" parent="." instance=ExtResource("18_7qsqd")]
-position = Vector2(903, 2653)
+[node name="AreasOfEffect" type="Node2D" parent="."]
+position = Vector2(1019, 1418)
+
+[node name="Ending" type="Area2D" parent="AreasOfEffect"]
+position = Vector2(4828, -999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreasOfEffect/Ending"]
+position = Vector2(9, 12)
+shape = SubResource("RectangleShape2D_w3yoa")
+
+[node name="MusicChanger" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+position = Vector2(-116, 1235)
 target_track = "Intro"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreasOfEffect/MusicChanger"]
 position = Vector2(-3.875, 45.5)
 shape = SubResource("RectangleShape2D_p0r8h")
 debug_color = Color(0.657412, 0.509128, 0.238719, 0.42)
 
-[node name="MusicChanger2" parent="." instance=ExtResource("18_7qsqd")]
-position = Vector2(1811, 1024)
+[node name="MusicChanger2" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+position = Vector2(792, -394)
 target_track = "Exploration"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreasOfEffect/MusicChanger2"]
 position = Vector2(-272.25, 360.25)
 shape = SubResource("RectangleShape2D_56qah")
 
-[node name="MusicChanger3" parent="." instance=ExtResource("18_7qsqd")]
-position = Vector2(3198, 1697)
+[node name="MusicChanger3" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+position = Vector2(2179, 279)
 target_track = "Encounter"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreasOfEffect/MusicChanger3"]
 position = Vector2(17.5, -1.875)
 shape = SubResource("RectangleShape2D_gp6ef")
 debug_color = Color(0.948284, 0.156601, 0.423379, 0.42)
 
-[node name="MusicChanger4" parent="." instance=ExtResource("18_7qsqd")]
-position = Vector2(3198, 1697)
+[node name="MusicChanger4" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+position = Vector2(2179, 279)
 target_track = "EncounterEnd"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreasOfEffect/MusicChanger4"]
 position = Vector2(931, 845)
 shape = SubResource("RectangleShape2D_4mkfw")
 debug_color = Color(1, 1, 1, 0.42)
-
-[node name="WaterEffectTest" parent="." instance=ExtResource("10_i2piq")]
-visible = false
-position = Vector2(-526, 3013)
 
 [node name="SFXy" type="Node2D" parent="."]
 position = Vector2(3770, 1140)
@@ -261,29 +182,89 @@ volume_db = 9.793
 autoplay = true
 max_distance = 1300.0
 
-[node name="Enemy" parent="." instance=ExtResource("12_vvmqn")]
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="BoidSpawner" type="Node2D" parent="Spawners"]
+position = Vector2(1314, 1973)
+script = ExtResource("3_5kw40")
+max_boids = 10
+
+[node name="BoidSpawner2" type="Node2D" parent="Spawners"]
+position = Vector2(438, 446)
+script = ExtResource("3_5kw40")
+max_boids = 10
+
+[node name="BoidSpawner3" type="Node2D" parent="Spawners"]
+position = Vector2(2922, 1182)
+script = ExtResource("3_5kw40")
+max_boids = 10
+
+[node name="Enemies" type="Node2D" parent="."]
 position = Vector2(1019, 1418)
 
-[node name="Enemy2" parent="." instance=ExtResource("12_vvmqn")]
-position = Vector2(620, 370)
+[node name="Enemy" parent="Enemies" instance=ExtResource("12_vvmqn")]
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("12_vvmqn")]
+position = Vector2(-399, -1048)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("12_vvmqn")]
+position = Vector2(4627, 1223)
+
+[node name="Kraken" parent="Enemies" instance=ExtResource("8_7h0lf")]
+position = Vector2(2956, -407)
+
+[node name="Ship" parent="." instance=ExtResource("1_0irde")]
+position = Vector2(185, 2907)
+collision_mask = 3
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Ship"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(185, 2907)
+limit_left = 0
+limit_top = 0
+limit_right = 6144
+limit_bottom = 3072
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="WaterEffectTest" parent="." instance=ExtResource("10_i2piq")]
+visible = false
+position = Vector2(-526, 3013)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.5, 0.5, 0.5, 1)
+color = Color(0.15, 0.15, 0.15, 1)
 
-[node name="Tutorial1" parent="." instance=ExtResource("11_fc3lb")]
+[node name="Tutorials" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 304.0
 offset_top = 2420.0
-offset_right = 304.0
-offset_bottom = 2420.0
+offset_right = 344.0
+offset_bottom = 2460.0
 
-[node name="Tutorial2" parent="." instance=ExtResource("12_sujeh")]
-offset_left = 1217.0
-offset_top = 2514.0
-offset_right = 1217.0
-offset_bottom = 2514.0
+[node name="Tutorial1" parent="Tutorials" instance=ExtResource("11_fc3lb")]
 
-[node name="Tutorial3" parent="." instance=ExtResource("13_p624x")]
-offset_left = 809.0
-offset_top = 1500.0
-offset_right = 809.0
-offset_bottom = 1500.0
+[node name="Tutorial2" parent="Tutorials" instance=ExtResource("12_sujeh")]
+offset_left = 913.0
+offset_top = 94.0
+offset_right = 913.0
+offset_bottom = 94.0
+
+[node name="Tutorial3" parent="Tutorials" instance=ExtResource("13_p624x")]
+offset_left = 505.0
+offset_top = -920.0
+offset_right = 505.0
+offset_bottom = -920.0
+
+[node name="Silt" type="Sprite2D" parent="."]
+light_mask = 7
+visibility_layer = 7
+material = SubResource("ShaderMaterial_q856l")
+position = Vector2(3399, 1745)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_161um")

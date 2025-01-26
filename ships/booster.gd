@@ -20,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 			Vector2.from_angle(global_rotation) * input * force,
 			global_position - parent.global_position
 		)
-		emitter.rotation_degrees = 0 if input > 0 else 180
+		emitter.direction.x = -1 if input > 0 else 1
 		emitter.emitting = true
 	else:
 		emitter.emitting = false

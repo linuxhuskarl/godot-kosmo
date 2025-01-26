@@ -1,7 +1,7 @@
 class_name Ship extends RigidBody2D
 
 
-@onready var raycasty: Node2D = $Raycasty
+@onready var raycasty: Node2D = $Reflector/Raycasty
 
 
 func check_enemy_and_deter(ray: RayCast2D) -> void:

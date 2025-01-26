@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvoicmvfqip0w"]
+[gd_scene load_steps=11 format=3 uid="uid://dvoicmvfqip0w"]
 
 [ext_resource type="Texture2D" uid="uid://br3huk14xqmkd" path="res://linras/bubbles/bubble.png" id="1_lhtjh"]
 [ext_resource type="Script" path="res://ships/bubble.gd" id="1_lr2wb"]
+[ext_resource type="PhysicsMaterial" uid="uid://d1aqbfc338bs3" path="res://ships/default.tres" id="1_xv1sr"]
 [ext_resource type="Texture2D" uid="uid://bfndkr5qsecn" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="3_f1jy6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hng8x"]
@@ -9,6 +10,21 @@ radius = 40.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0apsu"]
 polygon = PackedVector2Array(-16.4115, -64.4256, 0, -66.5025, 18, -64, 20.1688, -73.5888, -19.3277, -73.8142)
+
+[sub_resource type="Animation" id="Animation_exonf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_6k0hn"]
 resource_name = "default"
@@ -25,21 +41,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.9]
-}
-
-[sub_resource type="Animation" id="Animation_exonf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_qojtk"]
@@ -69,6 +70,7 @@ _data = {
 [node name="Bubble" type="RigidBody2D"]
 collision_layer = 9
 collision_mask = 15
+physics_material_override = ExtResource("1_xv1sr")
 gravity_scale = 10.0
 linear_damp = 1.0
 script = ExtResource("1_lr2wb")

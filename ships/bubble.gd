@@ -21,3 +21,6 @@ func hurt(dmg: float) -> void:
 	animation_player.play("hit")
 	if health < 0.0:
 		died.emit()
+		Input.start_joy_vibration(0, 0.5, 1.0, 1.0)
+	else:
+		Input.start_joy_vibration(0, 1.0, 0.5, 0.3)

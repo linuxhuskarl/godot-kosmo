@@ -13,6 +13,7 @@ var _the_source_of_light: Vector2
 var flee_timer: SceneTreeTimer
 var already_attacked := true
 @onready var bubble_detector: Area2D = $BubbleDetector
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -77,6 +78,7 @@ func _process(delta: float) -> void:
 				change_state(EnemyState.IDLE)
 		EnemyState.FLEE:
 			move_away(delta, _the_source_of_light)
+	sprite_2d.rotation = velocity.angle()
 	move_and_slide()
 
 func move_to(delta, gl_pos: Vector2):

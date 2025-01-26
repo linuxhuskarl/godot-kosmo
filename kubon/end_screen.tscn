@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://7ui5wsuv1u55"]
+[gd_scene load_steps=6 format=3 uid="uid://bx30wd2ckndaq"]
 
 [ext_resource type="Script" path="res://kubon/end_screen.gd" id="1_nna8b"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="2_ukeqh"]
@@ -71,7 +71,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.866058, 0.921126, 0.925662, 1)
 theme_override_fonts/font = SubResource("FontVariation_w0yry")
 theme_override_font_sizes/font_size = 60
-text = "YOUR SCORE"
+text = "YOUR TIME"
 horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -80,3 +80,10 @@ theme_override_colors/font_color = Color(0.643137, 0.74902, 0.486275, 1)
 theme_override_font_sizes/font_size = 45
 text = "<SCORE>"
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
