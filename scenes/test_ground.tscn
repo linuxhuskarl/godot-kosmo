@@ -5,15 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://linras/parallax/third-plan.png" id="2_m02pk"]
 [ext_resource type="Script" path="res://boids/boid_spawner.gd" id="3_5kw40"]
 [ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://linras/parallax/second-plan.png" id="3_fl33u"]
-[ext_resource type="PackedScene" uid="uid://b0pt7wolfol3f" path="res://enemies/kraken.tscn" id="8_7h0lf"]
+[ext_resource type="PackedScene" path="res://enemies/kraken.tscn" id="8_7h0lf"]
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
 [ext_resource type="PackedScene" uid="uid://w0l5f7k7a1b5" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
-[ext_resource type="PackedScene" path="res://kubon/Tutorial_1.tscn" id="11_fc3lb"]
+[ext_resource type="PackedScene" uid="uid://cla4c4l7pivck" path="res://kubon/Tutorial_1.tscn" id="11_fc3lb"]
 [ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://SZYMON/[SFX]CthuluIdle.mp3" id="11_jrja4"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="11_y4cxx"]
-[ext_resource type="PackedScene" path="res://kubon/Tutorial_2.tscn" id="12_sujeh"]
+[ext_resource type="PackedScene" uid="uid://bx0c4rtbcuvee" path="res://kubon/Tutorial_2.tscn" id="12_sujeh"]
 [ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://enemies/enemy.tscn" id="12_vvmqn"]
-[ext_resource type="PackedScene" path="res://kubon/Tutorial_3.tscn" id="13_p624x"]
+[ext_resource type="PackedScene" uid="uid://by0fguatryf3p" path="res://kubon/Tutorial_3.tscn" id="13_p624x"]
 [ext_resource type="Shader" path="res://shaders/snow.gdshader" id="15_q6ias"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="18_7qsqd"]
 
@@ -168,6 +168,15 @@ target_track = "EncounterEnd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreasOfEffect/MusicChanger4"]
 position = Vector2(931, 845)
+shape = SubResource("RectangleShape2D_4mkfw")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="MusicChanger5" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+position = Vector2(4529, 165)
+target_track = "GameOver"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreasOfEffect/MusicChanger5"]
+position = Vector2(129, -4)
 shape = SubResource("RectangleShape2D_4mkfw")
 debug_color = Color(1, 1, 1, 0.42)
 
