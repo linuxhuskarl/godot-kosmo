@@ -7,6 +7,7 @@ enum EnemyState {NONE, IDLE, CHASE, FLEE}
 @export var max_speed: float = 100
 @export var fleeing_time: float = 2.0
 @export var min_distance: float = 70.0
+@export var damage: float = 50.0
 
 var _was_in_light: bool = false
 var _the_source_of_light: Vector2
@@ -101,4 +102,4 @@ func _on_bite_area_body_entered(body: Node2D) -> void:
 		# toward mouth
 		bubble.apply_central_impulse(500 * global_position.direction_to(bubble.global_position))
 		change_state(EnemyState.FLEE)
-		bubble.hurt(50.0)
+		bubble.hurt(damage)

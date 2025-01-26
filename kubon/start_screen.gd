@@ -6,7 +6,7 @@ func _ready() -> void:
 	play.grab_focus()
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/test_ground.tscn")
+	get_tree().change_scene_to_file("res://scenes/tutorial_scene.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

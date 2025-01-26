@@ -212,7 +212,7 @@ position = Vector2(4627, 1223)
 position = Vector2(2956, -407)
 
 [node name="Ship" parent="." instance=ExtResource("1_0irde")]
-position = Vector2(185, 2907)
+position = Vector2(345, 2882)
 collision_mask = 3
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Ship"]
@@ -221,7 +221,7 @@ update_rotation = false
 update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(185, 2907)
+position = Vector2(345, 2882)
 limit_left = 0
 limit_top = 0
 limit_right = 6144

@@ -11,7 +11,7 @@ func _ready() -> void:
 	PlayerState.time_passed = 0
 	bubble.died.connect(func():
 		var tween = get_tree().create_tween()
-		tween.tween_property(canvas_modulate, "color", Color(0.0, 0.0, 0.0), 1.5)
+		tween.tween_property(canvas_modulate, "color", Color(-1,-1,-1), 1.5)
 		await tween.finished
 		get_tree().change_scene_to_file("res://kubon/fail_screen.tscn")
 	)
@@ -25,3 +25,6 @@ func _ready() -> void:
 			await tween.finished
 			get_tree().change_scene_to_file("res://kubon/end_screen.tscn")
 	)
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(canvas_modulate, "color", canvas_modulate.color, 1.5).from(Color(-1,-1,-1))
