@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6my65hishhlu"]
+[gd_scene load_steps=6 format=3 uid="uid://b6my65hishhlu"]
 
 [ext_resource type="Script" path="res://kubon/fail_screen.gd" id="1_mn12q"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="2_2fqoh"]
 [ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://linras/parallax/second-plan.png" id="3_iypk1"]
 [ext_resource type="FontFile" uid="uid://b7f31kpu6udej" path="res://kubon/Silure-yr0Z.ttf" id="4_musu8"]
+
+[sub_resource type="FontVariation" id="FontVariation_50rx8"]
+variation_embolden = 1.0
 
 [node name="FailScreen" type="Control"]
 layout_mode = 3
@@ -15,7 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_mn12q")
 
 [node name="BG1" type="TextureRect" parent="."]
-modulate = Color(0.633757, 0.633757, 0.633757, 1)
+modulate = Color(0.1496, 0.182453, 0.22, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +29,7 @@ texture = ExtResource("2_2fqoh")
 expand_mode = 1
 
 [node name="BG2" type="TextureRect" parent="."]
-modulate = Color(0.633757, 0.633757, 0.633757, 1)
+modulate = Color(0.2964, 0.38376, 0.39, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,6 +58,19 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_musu8")
 theme_override_font_sizes/font_size = 80
 text = "You failed..."
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_bottom = 5
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866058, 0.921126, 0.925662, 1)
+theme_override_fonts/font = SubResource("FontVariation_50rx8")
+theme_override_font_sizes/font_size = 60
+text = "Better luck next time!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]

@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	if health > 0.0 and health < max_health:
 		health += health_regen * delta
 	point_light_2d.color = Color(Color.BLACK).lerp(Color.WHITE, clampf(health/max_health, 0.0, 1.0))
+	
 	if not animation_player.is_playing():
 		animation_player.play("default")
 

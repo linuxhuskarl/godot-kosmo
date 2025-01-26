@@ -19,7 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_tfdvq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.633757, 0.633757, 0.633757, 1)
+modulate = Color(0.21, 0.239167, 0.28, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,9 +42,11 @@ theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 50
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+modulate = Color(0.5874, 0.66, 0.63943, 1)
 layout_mode = 2
 texture = ExtResource("3_jxtkw")
 expand_mode = 1
+stretch_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
