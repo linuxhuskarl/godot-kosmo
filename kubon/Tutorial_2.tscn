@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bx0c4rtbcuvee"]
 
 [ext_resource type="Texture2D" uid="uid://ckwtv13bt6ray" path="res://kubon/XBOX BUTTONS - Premium Assets/Digital Buttons/Shoulder/button_xbox_digital_bumper_light_1.png" id="1_fwyuq"]
-[ext_resource type="Texture2D" uid="uid://biutx7fqnfip5" path="res://kubon/Keyboard buttons/Q.png" id="2_j5guj"]
+[ext_resource type="Texture2D" uid="uid://7h3hcw1wht6w" path="res://kubon/Keyboard buttons/new/Q.png" id="2_q5jx7"]
 [ext_resource type="Texture2D" uid="uid://cwuh6dpoey4yu" path="res://kubon/XBOX BUTTONS - Premium Assets/Digital Buttons/Shoulder/button_xbox_digital_bumper_light_2.png" id="3_v1sjw"]
-[ext_resource type="Texture2D" uid="uid://m7cuilw3fjc7" path="res://kubon/Keyboard buttons/E.png" id="4_7vh0t"]
+[ext_resource type="Texture2D" uid="uid://nsk0qg5lhx2i" path="res://kubon/Keyboard buttons/new/E.png" id="4_77jjg"]
 
 [node name="Tutorial1" type="Control"]
 layout_mode = 3
@@ -28,7 +28,7 @@ text = "/"
 [node name="A" type="TextureRect" parent="VFlowContainer"]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
-texture = ExtResource("2_j5guj")
+texture = ExtResource("2_q5jx7")
 expand_mode = 1
 
 [node name="Label4" type="Label" parent="VFlowContainer"]
@@ -50,7 +50,7 @@ text = "/"
 [node name="D" type="TextureRect" parent="VFlowContainer"]
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
-texture = ExtResource("4_7vh0t")
+texture = ExtResource("4_77jjg")
 expand_mode = 1
 
 [node name="Label5" type="Label" parent="VFlowContainer"]
