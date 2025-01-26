@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://iweybw48jc01"]
+[gd_scene load_steps=11 format=3 uid="uid://iweybw48jc01"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_sfe8d"]
 [ext_resource type="Texture2D" uid="uid://bpic17ctsq2wv" path="res://linras/boids/fish.png" id="3_b2sk6"]
+[ext_resource type="AudioStream" uid="uid://bwmrwsq1uhn3p" path="res://SZYMON/[SFX]PiranieIdle.mp3" id="3_o0347"]
 
 [sub_resource type="Shader" id="Shader_awuep"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's CanvasItemMaterial.
@@ -68,5 +69,12 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BiteArea"]
 shape = SubResource("CircleShape2D_er7l1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o0347")
+volume_db = 5.754
+autoplay = true
+max_distance = 920.0
+bus = &"Piranie"
 
 [connection signal="body_entered" from="BiteArea" to="." method="_on_bite_area_body_entered"]
