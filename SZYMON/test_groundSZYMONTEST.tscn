@@ -9,7 +9,7 @@
 [ext_resource type="Shader" path="res://shaders/snow.gdshader" id="7_kigxi"]
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_dt3ei"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="9_vualj"]
-[ext_resource type="PackedScene" uid="uid://dxtuh1riy1tyw" path="res://SZYMON/WaterEffectTest.tscn" id="10_47phs"]
+[ext_resource type="PackedScene" uid="uid://w0l5f7k7a1b5" path="res://SZYMON/WaterEffectTest.tscn" id="10_47phs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]
 

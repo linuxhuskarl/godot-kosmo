@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://w0l5f7k7a1b5"]
 
 [ext_resource type="Texture2D" uid="uid://8lmnpvjr1vce" path="res://SZYMON/TestImage.png" id="1_jbrra"]
-[ext_resource type="PackedScene" path="res://SZYMON/WATEREFFECT.tscn" id="1_r7565"]
+[ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://SZYMON/WATEREFFECT.tscn" id="1_r7565"]
 [ext_resource type="Shader" path="res://SZYMON/FloatingWater.gdshader" id="3_xwix5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_80gc1"]
@@ -26,6 +26,7 @@ shader_parameter/fast_noise = SubResource("NoiseTexture2D_ti2lm")
 [node name="WaterEffectTest" type="Node2D"]
 
 [node name="TestImage" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(6785, 1323)
 texture = ExtResource("1_jbrra")
 
