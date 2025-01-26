@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://4mc7kuolj08h"]
+[gd_scene load_steps=2 format=3 uid="uid://1dfxgxeso27s"]
 
 [ext_resource type="Texture2D" uid="uid://d4mnnm10kaw5i" path="res://kubon/XBOX BUTTONS - Premium Assets/Digital Buttons/Analog/button_xbox_digital_analog_click_light_4.png" id="1_nwvwj"]
 
@@ -10,16 +10,22 @@ anchors_preset = 0
 layout_mode = 0
 offset_right = 555.0
 offset_bottom = 96.0
+alignment = 1
 
 [node name="Label" type="Label" parent="HFlowContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Watch out for nasty fishes,"
 
+[node name="Label3" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "they target your bubble friend!"
+
 [node name="Label2" type="Label" parent="HFlowContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "scare them away with light "
+text = "Scare them away with light "
 
 [node name="LtIcon" type="TextureRect" parent="HFlowContainer"]
 custom_minimum_size = Vector2(45, 45)
