@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="2_papf0"]
 [ext_resource type="Texture2D" uid="uid://cu3fwtomof8sh" path="res://linras/ship/ship.png" id="3_jxtkw"]
 [ext_resource type="FontFile" uid="uid://b7f31kpu6udej" path="res://kubon/Silure-yr0Z.ttf" id="4_f3sum"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j8i2c"]
+[ext_resource type="Theme" uid="uid://bsyjmm3kj6qyr" path="res://themes/spacey/spacey.tres" id="5_xx4ao"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ghspo"]
 
@@ -66,7 +65,7 @@ theme_override_constants/margin_right = 400
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(10, 30)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_j8i2c")
+theme = ExtResource("5_xx4ao")
 text = "PLAY"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
