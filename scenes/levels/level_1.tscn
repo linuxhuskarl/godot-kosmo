@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b0pt7wolfol3f" path="res://entities/enemies/cthulhu.tscn" id="9_qv6lm"]
 [ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://entities/ships/ship.tscn" id="10_4fext"]
 [ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://vfx/water_displacement.tscn" id="11_g0v6r"]
-[ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="12_x06xf"]
+[ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://scenes/levels/level_1_terrain.tscn" id="12_x06xf"]
 [ext_resource type="Shader" path="res://vfx/snow.gdshader" id="13_7u8fi"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://by0fguatryf3p"]
+
+[ext_resource type="Texture2D" uid="uid://d4mnnm10kaw5i" path="res://ui/XBOX BUTTONS - Premium Assets/Digital Buttons/Analog/button_xbox_digital_analog_click_light_4.png" id="1_yxmyt"]
+
+[node name="Tutorial1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Also, you can control the light with"
+
+[node name="LtIcon" type="TextureRect" parent="VFlowContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture = ExtResource("1_yxmyt")
+expand_mode = 1

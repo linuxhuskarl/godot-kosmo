@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cla4c4l7pivck"]
+
+[ext_resource type="Texture2D" uid="uid://b5b5dyksn6v0i" path="res://ui/XBOX BUTTONS - Premium Assets/Analog Triggers/button_xbox_analog_trigger_light_1.png" id="1_hwhhm"]
+[ext_resource type="Texture2D" uid="uid://ef7vwquj8eyr" path="res://ui/Keyboard buttons/new/A.png" id="2_eugbo"]
+[ext_resource type="Texture2D" uid="uid://bnhrxb6da444l" path="res://ui/XBOX BUTTONS - Premium Assets/Analog Triggers/button_xbox_analog_trigger_light_2.png" id="3_rl2o2"]
+[ext_resource type="Texture2D" uid="uid://bssjkuftoj7pu" path="res://ui/Keyboard buttons/new/D.png" id="4_ulpjb"]
+
+[node name="Tutorial1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Press"
+
+[node name="LtIcon" type="TextureRect" parent="VFlowContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture = ExtResource("1_hwhhm")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "/"
+
+[node name="LtIcon2" type="TextureRect" parent="VFlowContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture = ExtResource("2_eugbo")
+expand_mode = 1
+
+[node name="Label4" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "and"
+
+[node name="RtIcon" type="TextureRect" parent="VFlowContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture = ExtResource("3_rl2o2")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "/"
+
+[node name="RtIcon2" type="TextureRect" parent="VFlowContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture = ExtResource("4_ulpjb")
+expand_mode = 1
+
+[node name="Label5" type="Label" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "to steer"

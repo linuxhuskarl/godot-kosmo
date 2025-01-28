@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="kosmo"
-run/main_scene="res://kubon/start_screen.tscn"
+run/main_scene="res://scenes/menu_screens/start_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -43,8 +43,8 @@ boid=""
 
 [gui]
 
-theme/custom="res://themes/spacey/spacey.tres"
-theme/custom_font="res://themes/spacey/font/Share/Share-Regular.ttf"
+theme/custom="res://ui/themes/spacey/spacey.tres"
+theme/custom_font="res://ui/themes/spacey/font/Share/Share-Regular.ttf"
 
 [input]
 

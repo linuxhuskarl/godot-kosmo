@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6my65hishhlu"]
+
+[ext_resource type="Script" path="res://scenes/menu_screens/fail_screen.gd" id="1_mn12q"]
+[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="2_2fqoh"]
+[ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://art/parallax/second-plan.png" id="3_iypk1"]
+[ext_resource type="FontFile" uid="uid://b7f31kpu6udej" path="res://ui/Silure-yr0Z.ttf" id="4_musu8"]
+[ext_resource type="StyleBox" uid="uid://clb2fsgyvp5pa" path="res://ui/themes/spacey/panels/spacey_button_hovered.tres" id="5_jrh8p"]
+
+[sub_resource type="FontVariation" id="FontVariation_50rx8"]
+variation_embolden = 1.0
+
+[node name="FailScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mn12q")
+
+[node name="BG1" type="TextureRect" parent="."]
+modulate = Color(0.1496, 0.182453, 0.22, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2fqoh")
+expand_mode = 1
+
+[node name="BG2" type="TextureRect" parent="."]
+modulate = Color(0.2964, 0.38376, 0.39, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_iypk1")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 1052.0
+offset_bottom = 598.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_musu8")
+theme_override_font_sizes/font_size = 80
+text = "You failed..."
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_bottom = 5
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866058, 0.921126, 0.925662, 1)
+theme_override_fonts/font = SubResource("FontVariation_50rx8")
+theme_override_font_sizes/font_size = 60
+text = "Better luck next time!"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/focus = ExtResource("5_jrh8p")
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_button_pressed"]

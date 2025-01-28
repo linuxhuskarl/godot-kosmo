@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://br3huk14xqmkd" path="res://art/bubbles/bubble.png" id="1_lhtjh"]
 [ext_resource type="Script" path="res://entities/ships/bubble.gd" id="1_lr2wb"]
 [ext_resource type="PhysicsMaterial" uid="uid://d1aqbfc338bs3" path="res://entities/ships/default.tres" id="1_xv1sr"]
-[ext_resource type="Texture2D" uid="uid://bfndkr5qsecn" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="3_f1jy6"]
+[ext_resource type="Texture2D" uid="uid://bfndkr5qsecn" path="res://art/light/2d_lights_and_shadows_neutral_point_light.webp" id="3_f1jy6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hng8x"]
 radius = 40.0

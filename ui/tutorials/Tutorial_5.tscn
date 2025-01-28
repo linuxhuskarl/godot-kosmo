@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp3312v8c8usg"]
+
+[ext_resource type="Texture2D" uid="uid://detxlrjaj6t1n" path="res://ui/glow.png" id="1_byjy2"]
+
+[node name="Tutorial1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 0
+offset_right = 555.0
+offset_bottom = 96.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Your friend's health is symbolized"
+
+[node name="Label3" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "by his glow"
+
+[node name="Glow" type="Sprite2D" parent="HFlowContainer"]
+position = Vector2(330, 76)
+scale = Vector2(1.93, 1.93)
+texture = ExtResource("1_byjy2")
