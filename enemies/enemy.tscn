@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_sfe8d"]
 [ext_resource type="Texture2D" uid="uid://dkx80xwrccy4s" path="res://art/entities/angry fish/angry fish.png" id="2_uu5u2"]
-[ext_resource type="AudioStream" uid="uid://bwmrwsq1uhn3p" path="res://SZYMON/[SFX]PiranieIdle.mp3" id="3_o0347"]
+[ext_resource type="AudioStream" uid="uid://bwmrwsq1uhn3p" path="res://audio/sfx/[SFX]PiranieIdle.mp3" id="3_o0347"]
 
 [sub_resource type="Shader" id="Shader_awuep"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's CanvasItemMaterial.

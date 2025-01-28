@@ -21,7 +21,7 @@ buses/default_bus_layout="res://audio/default_bus_layout.tres"
 
 [autoload]
 
-AudioManager="*res://SZYMON/audio_manager.tscn"
+AudioManager="*res://autoload/audio_manager.tscn"
 PlayerState="*res://autoload/player_state.gd"
 
 [display]

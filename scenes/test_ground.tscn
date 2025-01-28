@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://art/parallax/second-plan.png" id="3_fl33u"]
 [ext_resource type="PackedScene" uid="uid://b0pt7wolfol3f" path="res://enemies/kraken.tscn" id="8_7h0lf"]
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
-[ext_resource type="PackedScene" uid="uid://w0l5f7k7a1b5" path="res://SZYMON/WaterEffectTest.tscn" id="10_i2piq"]
-[ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://SZYMON/[SFX]CthuluIdle.mp3" id="11_jrja4"]
+[ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://audio/sfx/[SFX]CthuluIdle.mp3" id="11_jrja4"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="11_y4cxx"]
+[ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://SZYMON/WATEREFFECT.tscn" id="12_jdgra"]
 [ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://enemies/enemy.tscn" id="12_vvmqn"]
 [ext_resource type="Shader" path="res://shaders/snow.gdshader" id="15_q6ias"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="18_7qsqd"]
@@ -235,8 +235,9 @@ limit_bottom = 3072
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 
-[node name="WaterEffectTest" parent="." instance=ExtResource("10_i2piq")]
-position = Vector2(-526, 3013)
+[node name="WaterDisplacementEffect" parent="." instance=ExtResource("12_jdgra")]
+position = Vector2(3129, 1629)
+scale = Vector2(48.8906, 25.4844)
 
 [node name="Terrain" parent="." instance=ExtResource("8_vkj6k")]
 
@@ -255,7 +256,7 @@ offset_bottom = 2460.0
 light_mask = 7
 visibility_layer = 7
 material = SubResource("ShaderMaterial_q856l")
-position = Vector2(3399, 1745)
+position = Vector2(3049.95, 1614.95)
 rotation = 3.14159
-scale = Vector2(2, 2)
+scale = Vector2(1.59998, 1.65394)
 texture = SubResource("GradientTexture2D_161um")

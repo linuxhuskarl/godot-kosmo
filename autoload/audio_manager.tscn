@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://cve4pfi746dah"]
 
-[ext_resource type="Script" path="res://SZYMON/audio_manager.gd" id="1_5b2fo"]
-[ext_resource type="AudioStream" uid="uid://c26a2y5ohyniu" path="res://SZYMON/[music]Intro.mp3" id="2_x7i6s"]
-[ext_resource type="AudioStream" uid="uid://cjonk4dilx6b6" path="res://SZYMON/[music]Exploration.mp3" id="3_qkey4"]
-[ext_resource type="AudioStream" uid="uid://ct3w1dxlyygsb" path="res://SZYMON/[music]Encounter.mp3" id="4_vjnxh"]
-[ext_resource type="AudioStream" uid="uid://bk6teme42wlxf" path="res://SZYMON/[music]EncounterEnd.mp3" id="5_shakj"]
-[ext_resource type="AudioStream" uid="uid://c6nou1jgsrmof" path="res://SZYMON/[music]GameOver.mp3" id="6_dkua2"]
-[ext_resource type="AudioStream" uid="uid://bo8jmq3fut04o" path="res://SZYMON/[SFX]BackgroundNoise.mp3" id="6_qme5o"]
-[ext_resource type="AudioStream" uid="uid://bdqu8k6eooctc" path="res://SZYMON/[SFX]EngineOn.mp3" id="7_lkvb1"]
-[ext_resource type="AudioStream" uid="uid://4e7oxih862gq" path="res://SZYMON/[SFX]EngineOff.mp3" id="8_d4bal"]
+[ext_resource type="Script" path="res://autoload/audio_manager.gd" id="1_5b2fo"]
+[ext_resource type="AudioStream" uid="uid://c26a2y5ohyniu" path="res://audio/music/[music]Intro.mp3" id="2_x7i6s"]
+[ext_resource type="AudioStream" uid="uid://cjonk4dilx6b6" path="res://audio/music/[music]Exploration.mp3" id="3_qkey4"]
+[ext_resource type="AudioStream" uid="uid://ct3w1dxlyygsb" path="res://audio/music/[music]Encounter.mp3" id="4_vjnxh"]
+[ext_resource type="AudioStream" uid="uid://bk6teme42wlxf" path="res://audio/music/[music]EncounterEnd.mp3" id="5_shakj"]
+[ext_resource type="AudioStream" uid="uid://c6nou1jgsrmof" path="res://audio/music/[music]GameOver.mp3" id="6_dkua2"]
+[ext_resource type="AudioStream" uid="uid://bo8jmq3fut04o" path="res://audio/sfx/[SFX]BackgroundNoise.mp3" id="6_qme5o"]
+[ext_resource type="AudioStream" uid="uid://bdqu8k6eooctc" path="res://audio/sfx/[SFX]EngineOn.mp3" id="7_lkvb1"]
+[ext_resource type="AudioStream" uid="uid://4e7oxih862gq" path="res://audio/sfx/[SFX]EngineOff.mp3" id="8_d4bal"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_6tg6a"]
 clip_count = 5
