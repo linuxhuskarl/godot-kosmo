@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
 [ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://audio/sfx/[SFX]CthuluIdle.mp3" id="11_jrja4"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="11_y4cxx"]
-[ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://SZYMON/WATEREFFECT.tscn" id="12_jdgra"]
+[ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://SZYMON/water_displacement.tscn" id="12_jdgra"]
 [ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://enemies/enemy.tscn" id="12_vvmqn"]
 [ext_resource type="Shader" path="res://shaders/snow.gdshader" id="15_q6ias"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="18_7qsqd"]
