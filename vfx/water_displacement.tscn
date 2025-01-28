@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccflu6ymfimxd"]
 
-[ext_resource type="Shader" path="res://SZYMON/FloatingWater.gdshader" id="1_0mmnv"]
+[ext_resource type="Shader" path="res://vfx/water_displacement.gdshader" id="1_0mmnv"]
 [ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="2_o6cir"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_80gc1"]

@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
 [ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://audio/sfx/[SFX]CthuluIdle.mp3" id="11_jrja4"]
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="11_y4cxx"]
-[ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://SZYMON/water_displacement.tscn" id="12_jdgra"]
+[ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://vfx/water_displacement.tscn" id="12_jdgra"]
 [ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://enemies/enemy.tscn" id="12_vvmqn"]
 [ext_resource type="Shader" path="res://shaders/snow.gdshader" id="15_q6ias"]
-[ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://SZYMON/MusicChanger.tscn" id="18_7qsqd"]
+[ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://audio/music_changer.tscn" id="18_7qsqd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]
 
@@ -235,7 +235,7 @@ limit_bottom = 3072
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 
-[node name="WaterDisplacementEffect" parent="." instance=ExtResource("12_jdgra")]
+[node name="WaterDisplacement" parent="." instance=ExtResource("12_jdgra")]
 position = Vector2(3129, 1629)
 scale = Vector2(48.8906, 25.4844)
 
