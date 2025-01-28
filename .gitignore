@@ -3,3 +3,4 @@
 /android/
 _builds/
 addons/godot-rapier2d/bin/~libgodot_rapier.windows.x86_64-pc-windows-msvc.dll
+.vscode/settings.json

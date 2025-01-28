@@ -10,4 +10,4 @@ func _ready() -> void:
 	score.text = str(PlayerState.time_passed)
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://kubon/start_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu_screens/start_screen.tscn")

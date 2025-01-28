@@ -4,6 +4,5 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	var ship := body as Ship
-	print(ship)
 	if ship:
 		AudioManager.change_music_to(target_track)
