@@ -2,7 +2,7 @@ extends Node2D
 
 @export var max_boids := 20
 @export var delay := 0.2
-@export var boid_scene := preload("res://boids/boid.tscn")
+@export var boid_scene := preload("res://entities/boids/boid.tscn")
 
 var timer: Timer = null
 

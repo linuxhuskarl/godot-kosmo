@@ -13,7 +13,7 @@ func _ready() -> void:
 		var tween = get_tree().create_tween()
 		tween.tween_property(canvas_modulate, "color", Color(-1,-1,-1), 1.5)
 		await tween.finished
-		get_tree().change_scene_to_file("res://kubon/fail_screen.tscn")
+		get_tree().change_scene_to_file("res://scenes/menu_screens/fail_screen.tscn")
 	)
 	ending.body_entered.connect(func(body):
 		var bubble := body as Bubble
@@ -23,8 +23,16 @@ func _ready() -> void:
 			var tween = get_tree().create_tween()
 			tween.tween_property(canvas_modulate, "color", Color(12, 12, 12), 1.5)
 			await tween.finished
-			get_tree().change_scene_to_file("res://kubon/end_screen.tscn")
+			get_tree().change_scene_to_file("res://scenes/menu_screens/end_screen.tscn")
 	)
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property(canvas_modulate, "color", canvas_modulate.color, 1.5).from(Color(-1,-1,-1))
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		var tween = get_tree().create_tween()
+		tween.tween_property(canvas_modulate, "color", Color(0, 0, 0), 1.0)
+		await tween.finished
+		get_tree().change_scene_to_file("res://scenes/menu_screens/start_screen.tscn")
+		

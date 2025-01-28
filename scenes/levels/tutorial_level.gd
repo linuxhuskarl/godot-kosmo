@@ -11,5 +11,5 @@ func _ready() -> void:
 			var tween = get_tree().create_tween()
 			tween.tween_property(canvas_modulate, "color", Color(12,12,12), 1.5)
 			await tween.finished
-			get_tree().change_scene_to_file("res://scenes/test_ground.tscn")
+			get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 	)

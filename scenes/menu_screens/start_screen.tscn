@@ -68,7 +68,7 @@ custom_minimum_size = Vector2(10, 30)
 layout_mode = 2
 theme = ExtResource("5_xx4ao")
 theme_override_styles/focus = ExtResource("6_6src5")
-text = "PLAY"
+text = "PLAY WITH TUTORIAL"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -76,12 +76,25 @@ theme_override_constants/margin_left = 400
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 400
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+[node name="PlaySkipTutorial" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_styles/focus = ExtResource("6_6src5")
+text = "PLAY
+"
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 400
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer5"]
 layout_mode = 2
 theme_override_styles/focus = ExtResource("6_6src5")
 text = "EXIT"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 400
 theme_override_constants/margin_top = 5
@@ -93,4 +106,5 @@ theme = ExtResource("5_xx4ao")
 text = "Inverted steering"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer3/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer3/PlaySkipTutorial" to="." method="_on_play_skip_tutorial_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer5/Exit" to="." method="_on_exit_pressed"]

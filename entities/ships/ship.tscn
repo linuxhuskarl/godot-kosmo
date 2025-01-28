@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cjlovundhsjr1"]
 
 [ext_resource type="Script" path="res://entities/ships/ship.gd" id="1_de3ev"]
-[ext_resource type="PhysicsMaterial" uid="uid://d1aqbfc338bs3" path="res://entities/ships/default.tres" id="1_efwbg"]
+[ext_resource type="PhysicsMaterial" uid="uid://d1aqbfc338bs3" path="res://entities/ships/default_physics_material.tres" id="1_efwbg"]
 [ext_resource type="Texture2D" uid="uid://cu3fwtomof8sh" path="res://art/entities/ship/ship.png" id="2_q3ml3"]
 [ext_resource type="PackedScene" uid="uid://dis4jpqqomxhp" path="res://entities/ships/booster.tscn" id="3_ps1ty"]
 [ext_resource type="Texture2D" uid="uid://dg7uyvw40s7ir" path="res://art/light/cone_light.png" id="5_4msjt"]

@@ -14,7 +14,7 @@ class_name Rope extends Node2D
 var segments_created: Array[RopeSegment] = []
 var joints_created: Array[PinJoint2D] = []
 
-const ROPE_SEGMENT = preload("res://rope/rope_segment.tscn")
+const ROPE_SEGMENT = preload("res://entities/ships/rope/rope_segment.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
