@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dis4jpqqomxhp"]
 
-[ext_resource type="Script" path="res://ships/booster.gd" id="1_05pvo"]
+[ext_resource type="Script" path="res://entities/ships/booster.gd" id="1_05pvo"]
 [ext_resource type="Texture2D" uid="uid://dtgi8twgcc51y" path="res://art/bubbles/bubble trasparent.png" id="2_m0e8e"]
 [ext_resource type="Texture2D" uid="uid://dq70md6xvpoxs" path="res://icon.svg" id="3_wmi1w"]
 

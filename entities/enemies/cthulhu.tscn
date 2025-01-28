@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://b0pt7wolfol3f"]
 
-[ext_resource type="Script" path="res://enemies/cthulhu.gd" id="1_crrwh"]
+[ext_resource type="Script" path="res://entities/enemies/cthulhu.gd" id="1_crrwh"]
 [ext_resource type="Texture2D" uid="uid://c7moyn2rpgilp" path="res://art/entities/monster/monster arm.png" id="1_eh12f"]
 [ext_resource type="Texture2D" uid="uid://lv52bdhq8tuv" path="res://art/entities/monster/monster head.png" id="2_40wan"]
 [ext_resource type="Texture2D" uid="uid://dnt3h4akqaaof" path="res://art/entities/monster/monster macka.png" id="2_pdy31"]

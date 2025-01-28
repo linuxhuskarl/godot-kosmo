@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d184oahinljem"]
 
-[ext_resource type="PackedScene" uid="uid://dvoicmvfqip0w" path="res://ships/bubble.tscn" id="1_ur8sv"]
-[ext_resource type="Script" path="res://rope/rope.gd" id="2_3el8t"]
-[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="3_esyst"]
+[ext_resource type="PackedScene" uid="uid://dvoicmvfqip0w" path="res://entities/ships/bubble.tscn" id="1_ur8sv"]
+[ext_resource type="Script" path="res://entities/ships/rope/rope.gd" id="2_3el8t"]
+[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://entities/ships/ship.tscn" id="3_esyst"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ev682"]
 radius = 23.15

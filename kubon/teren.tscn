@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="3_o3fk6"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_5ej8n"]
 [ext_resource type="Resource" uid="uid://cy1lshkmclqfm" path="res://kubon/shape_materials.tres" id="5_bvww7"]
-[ext_resource type="Shader" path="res://shaders/godray.gdshader" id="6_ws7ir"]
+[ext_resource type="Shader" path="res://vfx/godray.gdshader" id="6_ws7ir"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4e1qi"]
 shader = ExtResource("6_ws7ir")

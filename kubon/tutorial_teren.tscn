@@ -1,6 +1,6 @@
 [gd_scene load_steps=59 format=3 uid="uid://bqqb7udfolyq4"]
 
-[ext_resource type="Shader" path="res://shaders/godray.gdshader" id="1_qa5k3"]
+[ext_resource type="Shader" path="res://vfx/godray.gdshader" id="1_qa5k3"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_j07ly"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_e5k11"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="4_qqvtn"]

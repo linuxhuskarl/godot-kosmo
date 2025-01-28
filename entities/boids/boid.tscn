@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwikbo78mibr2"]
 
-[ext_resource type="Script" path="res://boids/boid.gd" id="1_nsgrk"]
+[ext_resource type="Script" path="res://entities/boids/boid.gd" id="1_nsgrk"]
 [ext_resource type="Texture2D" uid="uid://bpic17ctsq2wv" path="res://art/entities/boids/fish.png" id="2_pq5ew"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1q5cq"]

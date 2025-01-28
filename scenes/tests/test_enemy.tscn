@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://colbwkc34d10w"]
 
 [ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="1_33we5"]
-[ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://enemies/enemy.tscn" id="1_h7bav"]
-[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="2_marxf"]
+[ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://entities/enemies/enemy.tscn" id="1_h7bav"]
+[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://entities/ships/ship.tscn" id="2_marxf"]
 
 [node name="TestEnemy" type="Node2D"]
 position = Vector2(290, 204)

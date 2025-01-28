@@ -1,18 +1,18 @@
 [gd_scene load_steps=23 format=3 uid="uid://0ojdpu60lwjo"]
 
-[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://ships/ship.tscn" id="1_0irde"]
-[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_0lo2f"]
-[ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://art/parallax/third-plan.png" id="2_m02pk"]
-[ext_resource type="Script" path="res://boids/boid_spawner.gd" id="3_5kw40"]
-[ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://art/parallax/second-plan.png" id="3_fl33u"]
-[ext_resource type="PackedScene" uid="uid://b0pt7wolfol3f" path="res://enemies/kraken.tscn" id="8_7h0lf"]
-[ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="8_vkj6k"]
-[ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://audio/sfx/[SFX]CthuluIdle.mp3" id="11_jrja4"]
-[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="11_y4cxx"]
-[ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://vfx/water_displacement.tscn" id="12_jdgra"]
-[ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://enemies/enemy.tscn" id="12_vvmqn"]
-[ext_resource type="Shader" path="res://shaders/snow.gdshader" id="15_q6ias"]
-[ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://audio/music_changer.tscn" id="18_7qsqd"]
+[ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_qq38v"]
+[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="2_abrop"]
+[ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://art/parallax/third-plan.png" id="3_5hw38"]
+[ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://art/parallax/second-plan.png" id="4_shpru"]
+[ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://audio/music_changer.tscn" id="5_bygyy"]
+[ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://audio/sfx/[SFX]CthuluIdle.mp3" id="6_pxplf"]
+[ext_resource type="Script" path="res://entities/boids/boid_spawner.gd" id="7_4ovs6"]
+[ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://entities/enemies/enemy.tscn" id="8_trhos"]
+[ext_resource type="PackedScene" uid="uid://b0pt7wolfol3f" path="res://entities/enemies/cthulhu.tscn" id="9_qv6lm"]
+[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://entities/ships/ship.tscn" id="10_4fext"]
+[ext_resource type="PackedScene" uid="uid://ccflu6ymfimxd" path="res://vfx/water_displacement.tscn" id="11_g0v6r"]
+[ext_resource type="PackedScene" uid="uid://cx0coyyasmosw" path="res://kubon/teren.tscn" id="12_x06xf"]
+[ext_resource type="Shader" path="res://vfx/snow.gdshader" id="13_7u8fi"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdcvm"]
 
@@ -32,7 +32,7 @@ size = Vector2(521, 384.25)
 size = Vector2(557, 246.125)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q856l"]
-shader = ExtResource("15_q6ias")
+shader = ExtResource("13_7u8fi")
 shader_parameter/spread = 0.0
 shader_parameter/size = 0.02
 shader_parameter/snow_color = Color(1, 1, 1, 1)
@@ -51,7 +51,7 @@ width = 4000
 height = 2000
 
 [node name="TestGround" type="Node2D"]
-script = ExtResource("1_0lo2f")
+script = ExtResource("1_qq38v")
 
 [node name="WorldBounds" type="Node2D" parent="."]
 
@@ -102,7 +102,7 @@ scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(3072, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("11_y4cxx")
+texture = ExtResource("2_abrop")
 centered = false
 
 [node name="ParallaxLayer2" type="Parallax2D" parent="ParallaxBackground"]
@@ -111,7 +111,7 @@ scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(3072, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("2_m02pk")
+texture = ExtResource("3_5hw38")
 centered = false
 
 [node name="ParallaxLayer3" type="Parallax2D" parent="ParallaxBackground"]
@@ -120,7 +120,7 @@ scroll_scale = Vector2(0.9, 0.9)
 repeat_size = Vector2(3072, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("3_fl33u")
+texture = ExtResource("4_shpru")
 centered = false
 
 [node name="AreasOfEffect" type="Node2D" parent="."]
@@ -133,7 +133,7 @@ position = Vector2(4689, -1143)
 position = Vector2(9, 12)
 shape = SubResource("RectangleShape2D_w3yoa")
 
-[node name="MusicChanger" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+[node name="MusicChanger" parent="AreasOfEffect" instance=ExtResource("5_bygyy")]
 position = Vector2(-116, 1235)
 target_track = "Intro"
 
@@ -142,7 +142,7 @@ position = Vector2(-3.875, 45.5)
 shape = SubResource("RectangleShape2D_p0r8h")
 debug_color = Color(0.657412, 0.509128, 0.238719, 0.42)
 
-[node name="MusicChanger2" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+[node name="MusicChanger2" parent="AreasOfEffect" instance=ExtResource("5_bygyy")]
 position = Vector2(792, -394)
 target_track = "Exploration"
 
@@ -150,7 +150,7 @@ target_track = "Exploration"
 position = Vector2(-272.25, 360.25)
 shape = SubResource("RectangleShape2D_56qah")
 
-[node name="MusicChanger3" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+[node name="MusicChanger3" parent="AreasOfEffect" instance=ExtResource("5_bygyy")]
 position = Vector2(2179, 279)
 target_track = "Encounter"
 
@@ -159,7 +159,7 @@ position = Vector2(17.5, -1.875)
 shape = SubResource("RectangleShape2D_gp6ef")
 debug_color = Color(0.948284, 0.156601, 0.423379, 0.42)
 
-[node name="MusicChanger4" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+[node name="MusicChanger4" parent="AreasOfEffect" instance=ExtResource("5_bygyy")]
 position = Vector2(2179, 279)
 target_track = "EncounterEnd"
 
@@ -168,7 +168,7 @@ position = Vector2(931, 845)
 shape = SubResource("RectangleShape2D_4mkfw")
 debug_color = Color(1, 1, 1, 0.42)
 
-[node name="MusicChanger5" parent="AreasOfEffect" instance=ExtResource("18_7qsqd")]
+[node name="MusicChanger5" parent="AreasOfEffect" instance=ExtResource("5_bygyy")]
 position = Vector2(4529, 165)
 target_track = "GameOver"
 
@@ -181,7 +181,7 @@ debug_color = Color(1, 1, 1, 0.42)
 position = Vector2(3770, 1140)
 
 [node name="CTHULU" type="AudioStreamPlayer2D" parent="SFXy"]
-stream = ExtResource("11_jrja4")
+stream = ExtResource("6_pxplf")
 volume_db = 9.793
 autoplay = true
 max_distance = 1300.0
@@ -190,34 +190,34 @@ max_distance = 1300.0
 
 [node name="BoidSpawner" type="Node2D" parent="Spawners"]
 position = Vector2(1314, 1973)
-script = ExtResource("3_5kw40")
+script = ExtResource("7_4ovs6")
 max_boids = 10
 
 [node name="BoidSpawner2" type="Node2D" parent="Spawners"]
 position = Vector2(438, 446)
-script = ExtResource("3_5kw40")
+script = ExtResource("7_4ovs6")
 max_boids = 10
 
 [node name="BoidSpawner3" type="Node2D" parent="Spawners"]
 position = Vector2(2922, 1182)
-script = ExtResource("3_5kw40")
+script = ExtResource("7_4ovs6")
 max_boids = 10
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(1019, 1418)
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("12_vvmqn")]
+[node name="Enemy" parent="Enemies" instance=ExtResource("8_trhos")]
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("12_vvmqn")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("8_trhos")]
 position = Vector2(-399, -1048)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("12_vvmqn")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("8_trhos")]
 position = Vector2(4627, 1223)
 
-[node name="Kraken" parent="Enemies" instance=ExtResource("8_7h0lf")]
+[node name="Kraken" parent="Enemies" instance=ExtResource("9_qv6lm")]
 position = Vector2(2956, -407)
 
-[node name="Ship" parent="." instance=ExtResource("1_0irde")]
+[node name="Ship" parent="." instance=ExtResource("10_4fext")]
 position = Vector2(345, 2882)
 collision_mask = 3
 
@@ -235,11 +235,11 @@ limit_bottom = 3072
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 
-[node name="WaterDisplacement" parent="." instance=ExtResource("12_jdgra")]
+[node name="WaterDisplacement" parent="." instance=ExtResource("11_g0v6r")]
 position = Vector2(3129, 1629)
 scale = Vector2(48.8906, 25.4844)
 
-[node name="Terrain" parent="." instance=ExtResource("8_vkj6k")]
+[node name="Terrain" parent="." instance=ExtResource("12_x06xf")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.32, 0.32, 0.32, 1)
