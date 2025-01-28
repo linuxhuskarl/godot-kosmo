@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lv52bdhq8tuv"
-path="res://.godot/imported/monster head.png-a47299a1415c11eed2e024275e1ff573.ctex"
+uid="uid://cjodft80vfvds"
+path="res://.godot/imported/seaweed.png-bb1f6f0002284f6ac7e8181b77680f4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/monster/monster head.png"
-dest_files=["res://.godot/imported/monster head.png-a47299a1415c11eed2e024275e1ff573.ctex"]
+source_file="res://art/seaweed/seaweed.png"
+dest_files=["res://.godot/imported/seaweed.png-bb1f6f0002284f6ac7e8181b77680f4b.ctex"]
 
 [params]
 

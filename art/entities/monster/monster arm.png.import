@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkx80xwrccy4s"
-path="res://.godot/imported/angry fish.png-bd3c84f725004b648aacc5450e72975f.ctex"
+uid="uid://c7moyn2rpgilp"
+path="res://.godot/imported/monster arm.png-f30c1913afc2b0a86ebb91cdc93e9b2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/angry fish/angry fish.png"
-dest_files=["res://.godot/imported/angry fish.png-bd3c84f725004b648aacc5450e72975f.ctex"]
+source_file="res://art/entities/monster/monster arm.png"
+dest_files=["res://.godot/imported/monster arm.png-f30c1913afc2b0a86ebb91cdc93e9b2b.ctex"]
 
 [params]
 

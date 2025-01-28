@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://w1mrpu7osbky"]
 
 [ext_resource type="Script" path="res://rope/rope_segment.gd" id="1_cawxw"]
-[ext_resource type="Texture2D" uid="uid://dpakq33jxa1ug" path="res://linras/rope/rope segment.png" id="2_31vox"]
+[ext_resource type="Texture2D" uid="uid://dpakq33jxa1ug" path="res://art/rope/rope segment.png" id="2_31vox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n42ua"]
 size = Vector2(24, 4)

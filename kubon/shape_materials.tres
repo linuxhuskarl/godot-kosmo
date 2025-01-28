@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_nuokl"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_ffrjl"]
-[ext_resource type="Texture2D" uid="uid://3x6xmu3et3ei" path="res://linras/terrain patterns/terrain-patterns_0002_short_edge.png" id="3_c21kg"]
+[ext_resource type="Texture2D" uid="uid://3x6xmu3et3ei" path="res://art/terrain patterns/terrain-patterns_0002_short_edge.png" id="3_c21kg"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="4_ijevn"]
-[ext_resource type="Texture2D" uid="uid://cijqa0inyq4af" path="res://linras/terrain patterns/terrain-patterns_0001_fill.png" id="5_cndli"]
+[ext_resource type="Texture2D" uid="uid://cijqa0inyq4af" path="res://art/terrain patterns/terrain-patterns_0001_fill.png" id="5_cndli"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="6_sxd5y"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aebd8"]

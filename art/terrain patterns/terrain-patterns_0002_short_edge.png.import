@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nlih3sbn0mj7"
-path="res://.godot/imported/third-plan.png-fc2b5f7206e5b6dfde0653657c531934.ctex"
+uid="uid://3x6xmu3et3ei"
+path="res://.godot/imported/terrain-patterns_0002_short_edge.png-54708c916b744c0057f058959efe0195.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/parallax/third-plan.png"
-dest_files=["res://.godot/imported/third-plan.png-fc2b5f7206e5b6dfde0653657c531934.ctex"]
+source_file="res://art/terrain patterns/terrain-patterns_0002_short_edge.png"
+dest_files=["res://.godot/imported/terrain-patterns_0002_short_edge.png-54708c916b744c0057f058959efe0195.ctex"]
 
 [params]
 

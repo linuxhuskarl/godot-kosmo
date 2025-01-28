@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cif7g1ovxinxe"
-path="res://.godot/imported/monster body.png-dd3acaade9c6d0a9e7168da2435019b2.ctex"
+uid="uid://cu3fwtomof8sh"
+path="res://.godot/imported/ship.png-8bb8fe44776c5e8724be3610f5817c69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/monster/monster body.png"
-dest_files=["res://.godot/imported/monster body.png-dd3acaade9c6d0a9e7168da2435019b2.ctex"]
+source_file="res://art/entities/ship/ship.png"
+dest_files=["res://.godot/imported/ship.png-8bb8fe44776c5e8724be3610f5817c69.ctex"]
 
 [params]
 

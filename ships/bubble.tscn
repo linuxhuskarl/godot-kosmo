@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dvoicmvfqip0w"]
 
-[ext_resource type="Texture2D" uid="uid://br3huk14xqmkd" path="res://linras/bubbles/bubble.png" id="1_lhtjh"]
+[ext_resource type="Texture2D" uid="uid://br3huk14xqmkd" path="res://art/bubbles/bubble.png" id="1_lhtjh"]
 [ext_resource type="Script" path="res://ships/bubble.gd" id="1_lr2wb"]
 [ext_resource type="PhysicsMaterial" uid="uid://d1aqbfc338bs3" path="res://ships/default.tres" id="1_xv1sr"]
 [ext_resource type="Texture2D" uid="uid://bfndkr5qsecn" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="3_f1jy6"]

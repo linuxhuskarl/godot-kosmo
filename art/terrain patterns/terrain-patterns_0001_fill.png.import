@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmw213r635erx"
-path="res://.godot/imported/seaweed 2.png-75650b625ed394ea22761f13433d0ee0.ctex"
+uid="uid://cijqa0inyq4af"
+path="res://.godot/imported/terrain-patterns_0001_fill.png-8cef6a95d3341bf267139c33fc1a3de0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/seaweed/seaweed 2.png"
-dest_files=["res://.godot/imported/seaweed 2.png-75650b625ed394ea22761f13433d0ee0.ctex"]
+source_file="res://art/terrain patterns/terrain-patterns_0001_fill.png"
+dest_files=["res://.godot/imported/terrain-patterns_0001_fill.png-8cef6a95d3341bf267139c33fc1a3de0.ctex"]
 
 [params]
 

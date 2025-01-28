@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca5klwxud668f"
-path="res://.godot/imported/ligth.png-be022d75867fc320904a1a209a179a00.ctex"
+uid="uid://lv52bdhq8tuv"
+path="res://.godot/imported/monster head.png-701f66bd3a2e962488cac9bdb3b08588.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ligth.png"
-dest_files=["res://.godot/imported/ligth.png-be022d75867fc320904a1a209a179a00.ctex"]
+source_file="res://art/entities/monster/monster head.png"
+dest_files=["res://.godot/imported/monster head.png-701f66bd3a2e962488cac9bdb3b08588.ctex"]
 
 [params]
 

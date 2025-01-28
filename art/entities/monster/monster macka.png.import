@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwtcoiwvq0n0d"
-path="res://.godot/imported/terrain-patterns_0000_edge.png-acbd1f06bc7ee01f85774e3698ec7eae.ctex"
+uid="uid://dnt3h4akqaaof"
+path="res://.godot/imported/monster macka.png-f7bcd06422efe18a08a9f4e25bf30083.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/terrain patterns/terrain-patterns_0000_edge.png"
-dest_files=["res://.godot/imported/terrain-patterns_0000_edge.png-acbd1f06bc7ee01f85774e3698ec7eae.ctex"]
+source_file="res://art/entities/monster/monster macka.png"
+dest_files=["res://.godot/imported/monster macka.png-f7bcd06422efe18a08a9f4e25bf30083.ctex"]
 
 [params]
 

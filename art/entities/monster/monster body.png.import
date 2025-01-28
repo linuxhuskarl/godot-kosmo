@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpakq33jxa1ug"
-path="res://.godot/imported/rope segment.png-f091d79f09b7a89f9b77ba7a23111ec5.ctex"
+uid="uid://cif7g1ovxinxe"
+path="res://.godot/imported/monster body.png-db158269793eff1adbcf8ad925b990bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/rope/rope segment.png"
-dest_files=["res://.godot/imported/rope segment.png-f091d79f09b7a89f9b77ba7a23111ec5.ctex"]
+source_file="res://art/entities/monster/monster body.png"
+dest_files=["res://.godot/imported/monster body.png-db158269793eff1adbcf8ad925b990bb.ctex"]
 
 [params]
 

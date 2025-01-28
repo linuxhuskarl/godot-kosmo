@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d275lcxedh2wa"
-path="res://.godot/imported/second-plan.png-abf8eac0c929e348ba96ee5c96fc1f55.ctex"
+uid="uid://dpakq33jxa1ug"
+path="res://.godot/imported/rope segment.png-c00702161e42e091c63e2009d8a302a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/parallax/second-plan.png"
-dest_files=["res://.godot/imported/second-plan.png-abf8eac0c929e348ba96ee5c96fc1f55.ctex"]
+source_file="res://art/rope/rope segment.png"
+dest_files=["res://.godot/imported/rope segment.png-c00702161e42e091c63e2009d8a302a8.ctex"]
 
 [params]
 

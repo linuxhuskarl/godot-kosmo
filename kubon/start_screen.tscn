@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://csag1g3m3uaap"]
 
 [ext_resource type="Script" path="res://kubon/start_screen.gd" id="1_tfdvq"]
-[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://linras/parallax/background-layer.png" id="2_papf0"]
-[ext_resource type="Texture2D" uid="uid://cu3fwtomof8sh" path="res://linras/ship/ship.png" id="3_jxtkw"]
+[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="2_papf0"]
+[ext_resource type="Texture2D" uid="uid://cu3fwtomof8sh" path="res://art/entities/ship/ship.png" id="3_jxtkw"]
 [ext_resource type="FontFile" uid="uid://b7f31kpu6udej" path="res://kubon/Silure-yr0Z.ttf" id="4_f3sum"]
 [ext_resource type="Theme" uid="uid://bsyjmm3kj6qyr" path="res://themes/spacey/spacey.tres" id="5_xx4ao"]
 [ext_resource type="StyleBox" uid="uid://clb2fsgyvp5pa" path="res://themes/spacey/panels/spacey_button_hovered.tres" id="6_6src5"]

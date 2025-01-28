@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br3huk14xqmkd"
-path="res://.godot/imported/bubble.png-498c6c34c0f3bf2d0c95224f5f09e5f3.ctex"
+uid="uid://dmw213r635erx"
+path="res://.godot/imported/seaweed 2.png-88541ab54987ac56aff9eb7de676fef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/bubbles/bubble.png"
-dest_files=["res://.godot/imported/bubble.png-498c6c34c0f3bf2d0c95224f5f09e5f3.ctex"]
+source_file="res://art/seaweed/seaweed 2.png"
+dest_files=["res://.godot/imported/seaweed 2.png-88541ab54987ac56aff9eb7de676fef8.ctex"]
 
 [params]
 

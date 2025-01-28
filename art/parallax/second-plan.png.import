@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtgi8twgcc51y"
-path="res://.godot/imported/bubble trasparent.png-74dbb7662c97f07eb33d1759b13dd9c0.ctex"
+uid="uid://d275lcxedh2wa"
+path="res://.godot/imported/second-plan.png-2813c97b551605a0ed8f5fce03b69896.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/bubbles/bubble trasparent.png"
-dest_files=["res://.godot/imported/bubble trasparent.png-74dbb7662c97f07eb33d1759b13dd9c0.ctex"]
+source_file="res://art/parallax/second-plan.png"
+dest_files=["res://.godot/imported/second-plan.png-2813c97b551605a0ed8f5fce03b69896.ctex"]
 
 [params]
 

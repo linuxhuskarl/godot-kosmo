@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cijqa0inyq4af"
-path="res://.godot/imported/terrain-patterns_0001_fill.png-cb77623b9a465b1d8e57329ccbc8a0e1.ctex"
+uid="uid://dkx80xwrccy4s"
+path="res://.godot/imported/angry fish.png-2c9988d322878859bc1ae9455ade51b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://linras/terrain patterns/terrain-patterns_0001_fill.png"
-dest_files=["res://.godot/imported/terrain-patterns_0001_fill.png-cb77623b9a465b1d8e57329ccbc8a0e1.ctex"]
+source_file="res://art/entities/angry fish/angry fish.png"
+dest_files=["res://.godot/imported/angry fish.png-2c9988d322878859bc1ae9455ade51b7.ctex"]
 
 [params]
 
