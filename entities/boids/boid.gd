@@ -48,10 +48,10 @@ func _physics_process(delta: float) -> void:
 	for ray in raycasts:
 		if ray.is_colliding():
 			var collision_point := ray.get_collision_point()
-			var collision_normal := ray.get_collision_normal()
+			#var collision_normal := ray.get_collision_normal()
 			var direction := collision_point.direction_to(global_position)
 			var distance := collision_point.distance_to(global_position)
-			var bounced := direction.bounce(collision_normal) * (ray_length - distance)
+			#var bounced := direction.bounce(collision_normal) * (ray_length - distance)
 			acceleration += separation_weight * (ray_length - distance) * direction
 
 

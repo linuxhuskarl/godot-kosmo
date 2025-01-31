@@ -204,6 +204,15 @@ max_boids = 0
 [node name="ShipWithBubble" parent="." instance=ExtResource("13_f47f1")]
 position = Vector2(214, 2905)
 
+[node name="Camera2D" type="Camera2D" parent="ShipWithBubble"]
+process_callback = 0
+limit_left = 0
+limit_top = 0
+limit_right = 6144
+limit_bottom = 3072
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(1019, 1418)
 
@@ -217,15 +226,6 @@ position = Vector2(4627, 1223)
 
 [node name="Kraken" parent="Enemies" instance=ExtResource("9_qv6lm")]
 position = Vector2(2956, -407)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(3163, 2370)
-limit_left = 0
-limit_top = 0
-limit_right = 6144
-limit_bottom = 3072
-position_smoothing_enabled = true
-position_smoothing_speed = 1.0
 
 [node name="WaterDisplacement" parent="." instance=ExtResource("11_g0v6r")]
 position = Vector2(3129, 1629)

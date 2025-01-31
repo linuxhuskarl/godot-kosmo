@@ -98,7 +98,7 @@ radius = 151.33
 [sub_resource type="CircleShape2D" id="CircleShape2D_1n855"]
 radius = 200.0
 
-[node name="Kraken" type="StaticBody2D"]
+[node name="Kraken" type="StaticBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_crrwh")

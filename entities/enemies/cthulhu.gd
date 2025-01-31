@@ -7,7 +7,7 @@ enum EnemyState {NONE, IDLE, CHASE, FLEE}
 @export var fleeing_time: float = 1.0
 
 var _was_in_light: bool = false
-var _the_source_of_light: Vector2
+#var _the_source_of_light: Vector2
 var flee_timer: SceneTreeTimer
 var hand_tween: Tween
 var macka_tween: Tween
@@ -78,7 +78,7 @@ func change_state(new_state: EnemyState) -> void:
 			macka_tween.tween_callback(func(): action_completed = true)
 	state = new_state
 
-func deter(source: Vector2):
+func deter(_source: Vector2):
 	if state != EnemyState.FLEE and not _was_in_light or state == EnemyState.FLEE:
 		change_state(EnemyState.FLEE)
 
@@ -102,7 +102,7 @@ func find_bubble_and_transition_to_chase() -> bool:
 	return false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match state:
 		EnemyState.NONE:
 			change_state(EnemyState.IDLE)

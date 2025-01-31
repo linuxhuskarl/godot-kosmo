@@ -5,8 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	ending.body_entered.connect(func(body):
-		var bubble := body as Bubble
-		if bubble:
+		if body as Ship:
 			Input.start_joy_vibration(0, 0.5, 0.0, 1.0)
 			var tween = get_tree().create_tween()
 			tween.tween_property(canvas_modulate, "color", Color(12,12,12), 1.5)

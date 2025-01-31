@@ -27,7 +27,7 @@ func change_state(new_state: EnemyState) -> void:
 			already_attacked = false
 		EnemyState.FLEE:
 			already_attacked = true
-			var flee_timer := get_tree().create_timer(fleeing_time)
+			flee_timer = get_tree().create_timer(fleeing_time)
 			flee_timer.timeout.connect(func(): change_state(EnemyState.IDLE))
 		EnemyState.IDLE:
 			_was_in_light = false

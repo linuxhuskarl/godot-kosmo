@@ -37,7 +37,8 @@ enabled=PackedStringArray("res://addons/rmsmartshape/plugin.cfg")
 
 [global_group]
 
-boid=""
+boid="Non-agressive entities, purely for visuals"
+enemy="Any kind of enemy present in the game"
 
 [gui]
 
@@ -128,9 +129,7 @@ pause={
 
 [physics]
 
+common/physics_jitter_fix=0.0
 2d/default_gravity=10.0
 2d/default_gravity_vector=Vector2(0, -1)
-
-[rendering]
-
-environment/defaults/default_clear_color=Color(0.03, 0.094, 0.15, 1)
+common/physics_interpolation=true

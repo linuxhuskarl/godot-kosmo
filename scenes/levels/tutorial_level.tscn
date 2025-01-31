@@ -16,11 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://dp3312v8c8usg" path="res://ui/tutorials/Tutorial_5.tscn" id="12_ucj3a"]
 [ext_resource type="PackedScene" uid="uid://bq67xbbd0r24t" path="res://entities/boids/boid_spawner.tscn" id="15_welw8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4re4"]
-size = Vector2(580, 396)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir4qe"]
 size = Vector2(455.75, 629)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4re4"]
+size = Vector2(580, 396)
 
 [node name="TutorialScene" type="Node2D"]
 script = ExtResource("1_2gijl")
@@ -61,10 +61,14 @@ collision_layer = 3
 position = Vector2(-1509, 1607)
 collision_mask = 3
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Ship"]
-remote_path = NodePath("../../Camera2D")
-update_rotation = false
-update_scale = false
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+process_callback = 0
+limit_left = -1950
+limit_top = 0
+limit_right = 3954
+limit_bottom = 3072
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
 
 [node name="Tutorials" type="Node2D" parent="."]
 
@@ -104,6 +108,15 @@ offset_top = 1286.0
 offset_right = 2611.0
 offset_bottom = 1286.0
 
+[node name="MusicChanger" parent="." instance=ExtResource("9_nkyxo")]
+position = Vector2(-851, 1411)
+target_track = "Intro"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger"]
+position = Vector2(-3.875, 45.5)
+shape = SubResource("RectangleShape2D_ir4qe")
+debug_color = Color(0.657412, 0.509128, 0.238719, 0.42)
+
 [node name="Ending" type="Area2D" parent="."]
 position = Vector2(3298, 408)
 
@@ -111,30 +124,12 @@ position = Vector2(3298, 408)
 position = Vector2(9, 12)
 shape = SubResource("RectangleShape2D_r4re4")
 
-[node name="MusicChanger" parent="Ending" instance=ExtResource("9_nkyxo")]
-position = Vector2(-4149, 1003)
-target_track = "Intro"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ending/MusicChanger"]
-position = Vector2(-3.875, 45.5)
-shape = SubResource("RectangleShape2D_ir4qe")
-debug_color = Color(0.657412, 0.509128, 0.238719, 0.42)
-
 [node name="Enemy" parent="." instance=ExtResource("6_xrwlg")]
 position = Vector2(1788, 1234)
 damage = 10.0
 
 [node name="BoidSpawner" parent="." instance=ExtResource("15_welw8")]
 position = Vector2(3097, 233)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1509, 1607)
-limit_left = -1950
-limit_top = 0
-limit_right = 3954
-limit_bottom = 3072
-position_smoothing_enabled = true
-position_smoothing_speed = 1.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.4, 0.4, 0.4, 1)

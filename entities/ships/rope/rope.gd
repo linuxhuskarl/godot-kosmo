@@ -18,20 +18,19 @@ const ROPE_SEGMENT = preload("res://entities/ships/rope/rope_segment.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if not anchor_A:
+		anchor_A = body_A
+	if not anchor_B:
+		anchor_B = body_B
 	generate_rope_segments()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func create_pin_joint(body_A: PhysicsBody2D, body_B: PhysicsBody2D, pin_position: Vector2) -> void:
+func create_pin_joint(pin_body_A: PhysicsBody2D, pin_body_B: PhysicsBody2D, pin_position: Vector2) -> void:
 	var joint := PinJoint2D.new()
 	add_child(joint)
 	joints_created.append(joint)
 	joint.global_position = pin_position
-	joint.node_a = body_A.get_path()
-	joint.node_b = body_B.get_path()
+	joint.node_a = pin_body_A.get_path()
+	joint.node_b = pin_body_B.get_path()
 	joint.bias = joint_bias
 
 func add_segment(rope_segment: RopeSegment) -> void:
@@ -47,9 +46,7 @@ func generate_rope_segments() -> void:
 	segment.global_position = anchor_A.global_position - segment.segment_start.position
 	segment.rotation = direction_angle
 	
-	var segment_length : float = segment.length()
-	var segment_count : int = ceili(rope_length / segment_length)
-	var real_segment_length : float = rope_length / segment_count
+	var segment_count : int = ceili(rope_length / segment.length())
 	for i in range(1, segment_count):
 		var segment_start = lerp(anchor_A.global_position, anchor_B.global_position, float(i)/segment_count)
 		segment = ROPE_SEGMENT.instantiate()

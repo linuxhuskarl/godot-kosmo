@@ -33,7 +33,7 @@ radius = 400.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_er7l1"]
 radius = 48.0416
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_sfe8d")
@@ -55,11 +55,11 @@ texture = SubResource("GradientTexture2D_e5wyd")
 shape = SubResource("CircleShape2D_hpaxc")
 
 [node name="BubbleDetector" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleDetector"]
+visible = false
 shape = SubResource("CircleShape2D_ol0y4")
 
 [node name="BiteArea" type="Area2D" parent="."]
