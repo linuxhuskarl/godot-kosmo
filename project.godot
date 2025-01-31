@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="kosmo"
+config/name="Bubble Trouble"
 run/main_scene="res://scenes/menu_screens/start_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -26,13 +26,10 @@ PlayerState="*res://autoload/player_state.gd"
 
 [display]
 
-window/size/mode=3
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/size/initial_position_type=3
 window/stretch/mode="canvas_items"
-
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
 
 [editor_plugins]
 
@@ -131,11 +128,8 @@ pause={
 
 [physics]
 
-common/physics_jitter_fix=0.0
-2d/physics_engine="Rapier2D"
 2d/default_gravity=10.0
 2d/default_gravity_vector=Vector2(0, -1)
-common/physics_interpolation=true
 
 [rendering]
 
