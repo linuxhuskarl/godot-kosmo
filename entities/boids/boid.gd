@@ -11,9 +11,11 @@ class_name Boid extends CharacterBody2D
 
 var raycasts: Array[RayCast2D] = []
 var visible_boids: Array[Boid] = []
+var sprite_anim_tween: Tween 
 
 @onready var ray_container := $RayContainer
 @onready var vision := $Vision
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	velocity = Vector2.RIGHT.rotated(rotation) * max_speed
@@ -28,6 +30,8 @@ func _ready() -> void:
 		raycasts.append(ray)
 
 	get_tree().create_timer(0.1).timeout.connect(_initial_boid_vision)
+	sprite_anim_tween = get_tree().create_tween()
+	sprite_anim_tween.kill()
 
 func _initial_boid_vision() -> void:
 	for body in vision.get_overlapping_bodies():
@@ -69,8 +73,14 @@ func _physics_process(delta: float) -> void:
 
 	velocity = max_speed * (velocity + acceleration * delta).normalized()
 	rotation = velocity.angle()
+	if not sprite_anim_tween.is_running() and (absf(global_rotation_degrees) > 90) != sprite_2d.flip_v:
+		sprite_anim_tween.kill()
+		sprite_anim_tween = get_tree().create_tween()
+		sprite_anim_tween.tween_property(sprite_2d, "scale:y", 0, 0.1)
+		sprite_anim_tween.tween_callback(func(): sprite_2d.flip_v = not sprite_2d.flip_v)
+		sprite_anim_tween.tween_property(sprite_2d, "scale:y", 0.1, 0.1)
+	
 	move_and_slide()
-
 
 func _on_vision_body_exited(body: Node2D) -> void:
 	body = body as Boid

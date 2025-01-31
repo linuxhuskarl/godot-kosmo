@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq67xbbd0r24t"]
+
+[ext_resource type="Script" path="res://entities/boids/boid_spawner.gd" id="1_tqah6"]
+
+[node name="BoidSpawner" type="Marker2D"]
+script = ExtResource("1_tqah6")

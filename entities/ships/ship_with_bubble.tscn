@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2dshpdto6i8u"]
+
+[ext_resource type="PackedScene" uid="uid://cjlovundhsjr1" path="res://entities/ships/ship.tscn" id="1_fe4e8"]
+[ext_resource type="Script" path="res://entities/ships/rope/rope.gd" id="2_ppt6t"]
+[ext_resource type="PackedScene" uid="uid://dvoicmvfqip0w" path="res://entities/ships/bubble.tscn" id="3_6xuqs"]
+
+[node name="ShipWithBubble" instance=ExtResource("1_fe4e8")]
+
+[node name="RopeAnchor" type="Marker2D" parent="." index="6"]
+position = Vector2(0, 12)
+
+[node name="Rope" type="Node2D" parent="." index="7" node_paths=PackedStringArray("body_A", "body_B", "anchor_A", "anchor_B")]
+script = ExtResource("2_ppt6t")
+body_A = NodePath("..")
+body_B = NodePath("../Bubble")
+anchor_A = NodePath("../RopeAnchor")
+anchor_B = NodePath("../Bubble")
+
+[node name="Bubble" parent="." index="8" instance=ExtResource("3_6xuqs")]
+position = Vector2(179, 0)
+
+[node name="RopeAnchor" type="Marker2D" parent="Bubble" index="4"]
+position = Vector2(-38, 0)

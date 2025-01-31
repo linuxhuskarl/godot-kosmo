@@ -19,7 +19,7 @@ number_of_rays = 9
 ray_span_degrees = 210.0
 max_speed = 150.0
 cohesion_weight = 3.0
-ray_collision_mask = 259
+ray_collision_mask = 267
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -45,9 +45,9 @@ color = Color(0.68, 0.728, 1, 1)
 polygon = PackedVector2Array(24, 0, 8, 16, -8, 8, -8, 0, -16, 8, -16, -8, -8, 0, -8, -8, 8, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-5, -3)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_pq5ew")
+offset = Vector2(-50, -30)
 flip_h = true
 
 [connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]

@@ -13,3 +13,10 @@ func _ready() -> void:
 			await tween.finished
 			get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 	)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		var tween = get_tree().create_tween()
+		tween.tween_property(canvas_modulate, "color", Color(0, 0, 0), 1.0)
+		await tween.finished
+		get_tree().change_scene_to_file("res://scenes/menu_screens/start_screen.tscn")

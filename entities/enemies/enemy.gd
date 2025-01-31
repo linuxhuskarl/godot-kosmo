@@ -69,6 +69,7 @@ func _process(delta: float) -> void:
 				change_state(EnemyState.FLEE)
 			else:
 				find_bubble_and_transition_to_chase()
+			move_to(delta, global_position)
 		EnemyState.CHASE:
 			if _was_in_light: # if in POV of light
 				_was_in_light = false

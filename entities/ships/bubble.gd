@@ -8,6 +8,7 @@ signal died
 
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var particles: CPUParticles2D = $Particles
 
 func _process(delta: float) -> void:
 	if health > 0.0 and health < max_health:
@@ -20,6 +21,7 @@ func _process(delta: float) -> void:
 func hurt(dmg: float) -> void:
 	health -= dmg
 	animation_player.play("hit")
+	particles.emitting = true
 	if health < 0.0:
 		died.emit()
 		Input.start_joy_vibration(0, 0.5, 1.0, 1.0)

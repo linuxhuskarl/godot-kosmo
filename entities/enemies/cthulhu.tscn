@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0pt7wolfol3f"]
+[gd_scene load_steps=16 format=3 uid="uid://b0pt7wolfol3f"]
 
 [ext_resource type="Script" path="res://entities/enemies/cthulhu.gd" id="1_crrwh"]
 [ext_resource type="Texture2D" uid="uid://c7moyn2rpgilp" path="res://art/entities/monster/monster arm.png" id="1_eh12f"]
@@ -6,8 +6,72 @@
 [ext_resource type="Texture2D" uid="uid://dnt3h4akqaaof" path="res://art/entities/monster/monster macka.png" id="2_pdy31"]
 [ext_resource type="Texture2D" uid="uid://cif7g1ovxinxe" path="res://art/entities/monster/monster body.png" id="3_isgrw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_333rf"]
-radius = 82.28
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_ncfhb"]
+target_nodepath = NodePath("../../IKTargets/HandTarget")
+tip_nodepath = NodePath("body/collar/arm/hand/hand_tip")
+ccdik_data_chain_length = 3
+joint_data/0/bone_index = 9
+joint_data/0/bone2d_node = NodePath("body/collar/arm/hand")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 8
+joint_data/1/bone2d_node = NodePath("body/collar/arm")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = false
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 7
+joint_data/2/bone2d_node = NodePath("body/collar")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = false
+joint_data/2/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_klkrk"]
+target_nodepath = NodePath("../../IKTargets/MackaTarget")
+tip_nodepath = NodePath("body/head/mouth/macka/macka2/macka3/macka4")
+ccdik_data_chain_length = 4
+joint_data/0/bone_index = 5
+joint_data/0/bone2d_node = NodePath("body/head/mouth/macka/macka2/macka3")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -50.0
+joint_data/0/constraint_angle_max = 20.0
+joint_data/0/constraint_angle_invert = true
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 4
+joint_data/1/bone2d_node = NodePath("body/head/mouth/macka/macka2")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = -50.0
+joint_data/1/constraint_angle_max = 20.0
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 3
+joint_data/2/bone2d_node = NodePath("body/head/mouth/macka")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = true
+joint_data/2/constraint_angle_min = -20.0
+joint_data/2/constraint_angle_max = 40.0
+joint_data/2/constraint_angle_invert = true
+joint_data/2/constraint_in_localspace = true
+joint_data/2/editor_draw_gizmo = true
+joint_data/3/bone_index = 2
+joint_data/3/bone2d_node = NodePath("body/head/mouth")
+joint_data/3/rotate_from_joint = false
+joint_data/3/enable_constraint = true
+joint_data/3/constraint_angle_min = -40.0
+joint_data/3/constraint_angle_max = 25.0
+joint_data/3/constraint_angle_invert = true
+joint_data/3/constraint_in_localspace = true
+joint_data/3/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_4oq3p"]
+enabled = true
+modification_count = 2
+modifications/0 = SubResource("SkeletonModification2DCCDIK_ncfhb")
+modifications/1 = SubResource("SkeletonModification2DCCDIK_klkrk")
 
 [sub_resource type="Gradient" id="Gradient_upu0x"]
 offsets = PackedFloat32Array(0, 0.176991, 0.286136, 0.356932)
@@ -18,93 +82,26 @@ gradient = SubResource("Gradient_upu0x")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_1rrlm"]
-target_nodepath = NodePath("../../IKTargets/MackaTarget")
-tip_nodepath = NodePath("body/head/mouth/macka/macka2/macka3/macka4")
-ccdik_data_chain_length = 5
-joint_data/0/bone_index = 5
-joint_data/0/bone2d_node = NodePath("body/head/mouth/macka/macka2/macka3")
-joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = -45.0
-joint_data/0/constraint_angle_max = 30.0
-joint_data/0/constraint_angle_invert = true
-joint_data/0/constraint_in_localspace = true
-joint_data/0/editor_draw_gizmo = true
-joint_data/1/bone_index = 4
-joint_data/1/bone2d_node = NodePath("body/head/mouth/macka/macka2")
-joint_data/1/rotate_from_joint = false
-joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = -40.0
-joint_data/1/constraint_angle_max = 30.0
-joint_data/1/constraint_angle_invert = true
-joint_data/1/constraint_in_localspace = true
-joint_data/1/editor_draw_gizmo = true
-joint_data/2/bone_index = 3
-joint_data/2/bone2d_node = NodePath("body/head/mouth/macka")
-joint_data/2/rotate_from_joint = false
-joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = -20.0
-joint_data/2/constraint_angle_max = 45.0
-joint_data/2/constraint_angle_invert = true
-joint_data/2/constraint_in_localspace = true
-joint_data/2/editor_draw_gizmo = true
-joint_data/3/bone_index = 2
-joint_data/3/bone2d_node = NodePath("body/head/mouth")
-joint_data/3/rotate_from_joint = false
-joint_data/3/enable_constraint = true
-joint_data/3/constraint_angle_min = -30.0
-joint_data/3/constraint_angle_max = 15.0
-joint_data/3/constraint_angle_invert = true
-joint_data/3/constraint_in_localspace = true
-joint_data/3/editor_draw_gizmo = true
-joint_data/4/bone_index = 1
-joint_data/4/bone2d_node = NodePath("body/head")
-joint_data/4/rotate_from_joint = false
-joint_data/4/enable_constraint = true
-joint_data/4/constraint_angle_min = -308.571
-joint_data/4/constraint_angle_max = -13.005
-joint_data/4/constraint_angle_invert = true
-joint_data/4/constraint_in_localspace = true
-joint_data/4/editor_draw_gizmo = true
-
-[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_opi1q"]
-target_nodepath = NodePath("../../IKTargets/HandTarget")
-tip_nodepath = NodePath("body/shoulder/arm/hand")
-ccdik_data_chain_length = 2
-joint_data/0/bone_index = 8
-joint_data/0/bone2d_node = NodePath("body/shoulder/arm")
-joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = false
-joint_data/0/editor_draw_gizmo = true
-joint_data/1/bone_index = 7
-joint_data/1/bone2d_node = NodePath("body/shoulder")
-joint_data/1/rotate_from_joint = false
-joint_data/1/enable_constraint = false
-joint_data/1/editor_draw_gizmo = true
-
-[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_4oq3p"]
-enabled = true
-modification_count = 2
-modifications/0 = SubResource("SkeletonModification2DCCDIK_1rrlm")
-modifications/1 = SubResource("SkeletonModification2DCCDIK_opi1q")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4fgcp"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xle25"]
 radius = 20.0
+height = 140.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4u6s"]
-radius = 50.0
+radius = 75.21
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gpu0f"]
 radius = 1077.2
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_333rf"]
+radius = 151.33
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1n855"]
+radius = 200.0
+
 [node name="Kraken" type="StaticBody2D"]
 collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_crrwh")
-
-[node name="HeadCollider" type="CollisionShape2D" parent="."]
-position = Vector2(44, -66)
-shape = SubResource("CircleShape2D_333rf")
 
 [node name="Body" type="Node2D" parent="."]
 position = Vector2(-522, -442)
@@ -121,7 +118,7 @@ skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(184.939, -18.9882, 40.7987, -22.9193, -31.2714, 75.358, 48.6609, 206.394, 72.2474, 236.533, 112.869, 281.085, 160.042, 353.155, 203.284, 440.95, 228.181, 553.641, 298.941, 667.643, 619.98, 785.576, 731.361, 692.54, 642.256, 516.951, 485.012, 463.226, 402.459, 413.432, 329.079, 367.569, 267.492, 288.947, 213.767, 232.602, 205.905, 176.256, 212.456, 133.014, 149.525, 228.409)
 uv = PackedVector2Array(184.939, -18.9882, 40.7987, -22.9193, -31.2714, 75.358, 48.6609, 206.394, 72.2474, 236.533, 112.869, 281.085, 160.042, 353.155, 203.284, 440.95, 228.181, 553.641, 298.941, 667.643, 619.98, 785.576, 731.361, 692.54, 642.256, 516.951, 485.012, 463.226, 402.459, 413.432, 329.079, 367.569, 267.492, 288.947, 213.767, 232.602, 205.905, 176.256, 212.456, 133.014, 149.525, 228.409)
 polygons = [PackedInt32Array(2, 0, 1), PackedInt32Array(3, 19, 0, 2), PackedInt32Array(3, 4, 18, 19), PackedInt32Array(6, 16, 17, 5), PackedInt32Array(7, 6, 16, 15), PackedInt32Array(7, 8, 14, 15), PackedInt32Array(9, 13, 14, 8), PackedInt32Array(13, 9, 10, 12), PackedInt32Array(12, 11, 10), PackedInt32Array(4, 18, 20), PackedInt32Array(5, 20, 17), PackedInt32Array(5, 20, 4), PackedInt32Array(17, 20, 18)]
-bones = ["body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0), "body/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3/macka4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0.5), "body/shoulder/arm", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5), "body/shoulder/arm/hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5)]
+bones = ["body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0), "body/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3/macka4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "body/collar", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.5, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0), "body/collar/arm", PackedFloat32Array(0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0.5), "body/collar/arm/hand", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5), "body/collar/arm/hand/hand_tip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 1
 
 [node name="Macka1" type="Polygon2D" parent="Body/polygons"]
@@ -144,11 +141,6 @@ uv = PackedVector2Array(897.442, 401.884, 566.598, 629.212, 958.333, 960.055, 13
 polygons = [PackedInt32Array(1, 0, 4, 3, 2)]
 bones = ["body", PackedFloat32Array(0, 0, 0.5, 0, 0), "body/head", PackedFloat32Array(0.5, 0.5, 0, 0.5, 0.5), "body/head/mouth", PackedFloat32Array(0, 0, 0, 0, 0), "body/head/mouth/macka", PackedFloat32Array(0, 0, 0, 0, 0), "body/head/mouth/macka/macka2", PackedFloat32Array(0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3", PackedFloat32Array(0, 0, 0, 0, 0), "body/head/mouth/macka/macka2/macka3/macka4", PackedFloat32Array(0, 0, 0, 0, 0), "body/shoulder", PackedFloat32Array(0, 0, 0, 0, 0), "body/shoulder/arm", PackedFloat32Array(0, 0, 0, 0, 0), "body/shoulder/arm/hand", PackedFloat32Array(0, 0, 0, 0, 0)]
 
-[node name="PointLight2D" type="PointLight2D" parent="Body/polygons/Head"]
-position = Vector2(838, 586)
-color = Color(1, 0.933333, 0, 1)
-texture = SubResource("GradientTexture2D_7xgn8")
-
 [node name="Body" type="Polygon2D" parent="Body/polygons"]
 light_mask = 6
 visibility_layer = 6
@@ -169,7 +161,14 @@ rest = Transform2D(1, 0, 0, 1, 1017, 913)
 [node name="head" type="Bone2D" parent="Body/Skeleton2D/body"]
 position = Vector2(-45, -304)
 rest = Transform2D(1, 0, 0, 1, -45, -304)
-metadata/_local_pose_override_enabled_ = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Body/Skeleton2D/body/head"]
+remote_path = NodePath("../../../../../HeadCollider")
+
+[node name="EyeLight" type="PointLight2D" parent="Body/Skeleton2D/body/head"]
+position = Vector2(-126, -26)
+color = Color(1, 0.933333, 0, 1)
+texture = SubResource("GradientTexture2D_7xgn8")
 
 [node name="mouth" type="Bone2D" parent="Body/Skeleton2D/body/head"]
 position = Vector2(-301, 37)
@@ -195,42 +194,55 @@ metadata/_local_pose_override_enabled_ = true
 position = Vector2(-10, -173)
 rest = Transform2D(1, 0, 0, 1, -10, -173)
 
-[node name="MackaGrabber" type="Area2D" parent="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3/macka4"]
+[node name="MackaGrabber" type="Area2D" parent="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3"]
+position = Vector2(-9.85238, -117.115)
 collision_layer = 0
 collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3/macka4/MackaGrabber"]
-shape = SubResource("CircleShape2D_4fgcp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3/MackaGrabber"]
+shape = SubResource("CapsuleShape2D_xle25")
 
-[node name="shoulder" type="Bone2D" parent="Body/Skeleton2D/body"]
+[node name="collar" type="Bone2D" parent="Body/Skeleton2D/body"]
+position = Vector2(-23.5574, -4.80327)
+rest = Transform2D(1, 0, 0, 1, -23.5574, -4.80327)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="arm" type="Bone2D" parent="Body/Skeleton2D/body/collar"]
 position = Vector2(-157.984, -191.689)
-rest = Transform2D(1, 0, 0, 1, -157.984, -191.689)
+rotation = -0.938308
+scale = Vector2(0.999985, 0.999985)
+rest = Transform2D(0.591145, -0.806547, 0.806547, 0.591145, -157.984, -191.689)
 metadata/_local_pose_override_enabled_ = true
 
-[node name="arm" type="Bone2D" parent="Body/Skeleton2D/body/shoulder"]
-position = Vector2(-180.328, -257.377)
-rest = Transform2D(1, 0, 0, 1, -180.328, -257.377)
+[node name="hand" type="Bone2D" parent="Body/Skeleton2D/body/collar/arm"]
+position = Vector2(119.681, -286.156)
+rest = Transform2D(1, 0, 0, 1, 119.681, -286.156)
 metadata/_local_pose_override_enabled_ = true
 
-[node name="hand" type="Bone2D" parent="Body/Skeleton2D/body/shoulder/arm"]
-position = Vector2(-78.6885, -203.279)
-rest = Transform2D(1, 0, 0, 1, -78.6885, -203.279)
+[node name="hand_tip" type="Bone2D" parent="Body/Skeleton2D/body/collar/arm/hand"]
+position = Vector2(77.6754, -115.875)
+rest = Transform2D(1, 0, 0, 1, 77.6754, -115.875)
 
-[node name="HandGrabber" type="Area2D" parent="Body/Skeleton2D/body/shoulder/arm/hand"]
+[node name="HandGrabber" type="Area2D" parent="Body/Skeleton2D/body/collar/arm/hand"]
+position = Vector2(78.9976, -116.844)
 collision_layer = 0
 collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Skeleton2D/body/shoulder/arm/hand/HandGrabber"]
-position = Vector2(39.4261, 107.346)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body/Skeleton2D/body/collar/arm/hand/HandGrabber"]
 shape = SubResource("CircleShape2D_u4u6s")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Body/Skeleton2D/body"]
+position = Vector2(-48.35, 0)
+remote_path = NodePath("../../../../BodyCollider")
 
 [node name="IKTargets" type="Node2D" parent="."]
 position = Vector2(-522, -442)
 
 [node name="MackaIdleTarget" type="Marker2D" parent="IKTargets"]
-position = Vector2(315, 375)
+position = Vector2(-23, 732)
 
 [node name="MackaTarget" type="Marker2D" parent="IKTargets"]
+position = Vector2(-23, 732)
 
 [node name="HandIdleTarget" type="Marker2D" parent="IKTargets"]
 position = Vector2(249, 612)
@@ -245,5 +257,15 @@ position = Vector2(232, 489)
 shape = SubResource("CircleShape2D_gpu0f")
 debug_color = Color(0.576298, 0.385515, 1, 0.42)
 
-[connection signal="body_entered" from="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3/macka4/MackaGrabber" to="." method="_on_macka_grabber_body_entered"]
-[connection signal="body_entered" from="Body/Skeleton2D/body/shoulder/arm/hand/HandGrabber" to="." method="_on_hand_grabber_body_entered"]
+[node name="HeadCollider" type="CollisionShape2D" parent="."]
+position = Vector2(70.92, -70.51)
+scale = Vector2(0.61, 0.61)
+shape = SubResource("CircleShape2D_333rf")
+
+[node name="BodyCollider" type="CollisionShape2D" parent="."]
+position = Vector2(68.8765, 114.93)
+scale = Vector2(0.61, 0.61)
+shape = SubResource("CircleShape2D_1n855")
+
+[connection signal="body_entered" from="Body/Skeleton2D/body/head/mouth/macka/macka2/macka3/MackaGrabber" to="." method="_on_macka_grabber_body_entered"]
+[connection signal="body_entered" from="Body/Skeleton2D/body/collar/arm/hand/HandGrabber" to="." method="_on_hand_grabber_body_entered"]
