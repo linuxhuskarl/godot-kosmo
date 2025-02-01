@@ -79,7 +79,7 @@ point_count = 4
 offsets = PackedFloat32Array(0, 0.486667, 1)
 colors = PackedColorArray(1, 1, 1, 0.647059, 1, 1, 1, 0.533333, 1, 1, 1, 0)
 
-[node name="Bubble" type="RigidBody2D"]
+[node name="Bubble" type="RigidBody2D" groups=["bubble"]]
 collision_layer = 9
 collision_mask = 15
 physics_material_override = ExtResource("1_xv1sr")

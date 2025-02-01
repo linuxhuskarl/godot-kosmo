@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bty7b5c1a2isx"]
+[gd_scene load_steps=16 format=3 uid="uid://bty7b5c1a2isx"]
 
 [ext_resource type="Script" path="res://scenes/levels/tutorial_level.gd" id="1_2gijl"]
 [ext_resource type="PackedScene" uid="uid://bqqb7udfolyq4" path="res://scenes/levels/tutorial_terrain.tscn" id="1_8wdyi"]
@@ -7,13 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bx0c4rtbcuvee" path="res://ui/tutorials/Tutorial_2.tscn" id="4_p7glp"]
 [ext_resource type="PackedScene" uid="uid://by0fguatryf3p" path="res://ui/tutorials/Tutorial_3.tscn" id="5_njgrk"]
 [ext_resource type="PackedScene" uid="uid://iweybw48jc01" path="res://entities/enemies/enemy.tscn" id="6_xrwlg"]
-[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="8_wwswr"]
-[ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://art/parallax/third-plan.png" id="9_atfkn"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://audio/music_changer.tscn" id="9_nkyxo"]
 [ext_resource type="PackedScene" uid="uid://1dfxgxeso27s" path="res://ui/tutorials/Tutorial_4.tscn" id="10_0i518"]
-[ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://art/parallax/second-plan.png" id="10_fvq2i"]
 [ext_resource type="PackedScene" uid="uid://bjf6ys46ciusg" path="res://ui/tutorials/Tutorial_1_2.tscn" id="11_3j0ru"]
 [ext_resource type="PackedScene" uid="uid://dp3312v8c8usg" path="res://ui/tutorials/Tutorial_5.tscn" id="12_ucj3a"]
+[ext_resource type="PackedScene" uid="uid://c0hbsggmlmamt" path="res://art/parallax/parallax_2.tscn" id="13_00pps"]
 [ext_resource type="PackedScene" uid="uid://bq67xbbd0r24t" path="res://entities/boids/boid_spawner.tscn" id="15_welw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir4qe"]
@@ -25,34 +23,7 @@ size = Vector2(580, 396)
 [node name="TutorialScene" type="Node2D"]
 script = ExtResource("1_2gijl")
 
-[node name="ParallaxBackground" type="Node2D" parent="."]
-
-[node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground"]
-z_index = -100
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(3072, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("8_wwswr")
-centered = false
-
-[node name="ParallaxLayer2" type="Parallax2D" parent="ParallaxBackground"]
-z_index = -99
-scroll_scale = Vector2(0.5, 0.5)
-repeat_size = Vector2(3072, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("9_atfkn")
-centered = false
-
-[node name="ParallaxLayer3" type="Parallax2D" parent="ParallaxBackground"]
-z_index = -98
-scroll_scale = Vector2(0.9, 0.9)
-repeat_size = Vector2(3072, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("10_fvq2i")
-centered = false
+[node name="ParallaxBackground" parent="." instance=ExtResource("13_00pps")]
 
 [node name="TutorialTeren" parent="." instance=ExtResource("1_8wdyi")]
 collision_layer = 3
@@ -62,13 +33,15 @@ position = Vector2(-1509, 1607)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Ship"]
+zoom = Vector2(0.5, 0.5)
 process_callback = 0
 limit_left = -1950
 limit_top = 0
 limit_right = 3954
-limit_bottom = 3072
+limit_bottom = 6194
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
+editor_draw_limits = true
 
 [node name="Tutorials" type="Node2D" parent="."]
 

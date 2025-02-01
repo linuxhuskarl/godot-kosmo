@@ -22,6 +22,7 @@ buses/default_bus_layout="res://audio/default_bus_layout.tres"
 [autoload]
 
 AudioManager="*res://autoload/audio_manager.tscn"
+SceneManager="*res://autoload/scene_manager.gd"
 PlayerState="*res://autoload/player_state.gd"
 
 [display]
@@ -33,12 +34,14 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/rmsmartshape/plugin.cfg")
+enabled=PackedStringArray("res://addons/parallax2d_preview/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
 
 [global_group]
 
 boid="Non-agressive entities, purely for visuals"
 enemy="Any kind of enemy present in the game"
+bubble="Our friend deserves a special spot"
+player="A group for ship(s) controlled by the player"
 
 [gui]
 

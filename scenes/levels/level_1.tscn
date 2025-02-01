@@ -1,9 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://0ojdpu60lwjo"]
+[gd_scene load_steps=21 format=3 uid="uid://0ojdpu60lwjo"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_qq38v"]
-[ext_resource type="Texture2D" uid="uid://v18xiiuj175m" path="res://art/parallax/background-layer.png" id="2_abrop"]
-[ext_resource type="Texture2D" uid="uid://nlih3sbn0mj7" path="res://art/parallax/third-plan.png" id="3_5hw38"]
-[ext_resource type="Texture2D" uid="uid://d275lcxedh2wa" path="res://art/parallax/second-plan.png" id="4_shpru"]
+[ext_resource type="PackedScene" uid="uid://c82tjj3vd03wj" path="res://art/parallax/parallax_1.tscn" id="2_8xj7h"]
 [ext_resource type="PackedScene" uid="uid://1g7jpc8xptby" path="res://audio/music_changer.tscn" id="5_bygyy"]
 [ext_resource type="AudioStream" uid="uid://caj138kcaqopr" path="res://audio/sfx/[SFX]CthuluIdle.mp3" id="6_pxplf"]
 [ext_resource type="Script" path="res://entities/boids/boid_spawner.gd" id="7_4ovs6"]
@@ -94,34 +92,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBounds/RightWall"]
 shape = SubResource("WorldBoundaryShape2D_mdcvm")
 
-[node name="ParallaxBackground" type="Node2D" parent="."]
-
-[node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground"]
-z_index = -100
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(3072, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("2_abrop")
-centered = false
-
-[node name="ParallaxLayer2" type="Parallax2D" parent="ParallaxBackground"]
-z_index = -99
-scroll_scale = Vector2(0.5, 0.5)
-repeat_size = Vector2(3072, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("3_5hw38")
-centered = false
-
-[node name="ParallaxLayer3" type="Parallax2D" parent="ParallaxBackground"]
-z_index = -98
-scroll_scale = Vector2(0.9, 0.9)
-repeat_size = Vector2(3072, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("4_shpru")
-centered = false
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_8xj7h")]
 
 [node name="AreasOfEffect" type="Node2D" parent="."]
 position = Vector2(1019, 1418)

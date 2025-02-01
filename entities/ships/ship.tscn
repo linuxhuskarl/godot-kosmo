@@ -15,7 +15,7 @@ radius = 37.3363
 cull_mode = 1
 polygon = PackedVector2Array(-19, -36, -15, 10, 14, 10, 19, -36, 5, 1, 0, 3, -5, 1)
 
-[node name="Ship" type="RigidBody2D"]
+[node name="Ship" type="RigidBody2D" groups=["player"]]
 collision_mask = 15
 mass = 20.0
 physics_material_override = ExtResource("1_efwbg")
